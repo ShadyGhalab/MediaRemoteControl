@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		04A2B13952F4DB58A3A0D92F /* Pods_LockScreenUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D203A14F00C156B4F143E95E /* Pods_LockScreenUITests.framework */; };
+		20D6BCD8738451AC22B53B18 /* Pods_MediaRemoteControlTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E4470435A3D5CCCCAC7E07D /* Pods_MediaRemoteControlTests.framework */; };
+		304B702F1E799AAE001BE716 /* RemoteControlManagerSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304B702E1E799AAE001BE716 /* RemoteControlManagerSpecs.swift */; };
 		30810C601E75BCE900B119CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30810C5F1E75BCE900B119CA /* AppDelegate.swift */; };
 		30810C621E75BCE900B119CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30810C611E75BCE900B119CA /* ViewController.swift */; };
 		30810C651E75BCE900B119CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30810C631E75BCE900B119CA /* Main.storyboard */; };
@@ -16,12 +18,14 @@
 		30810C8E1E75BD3200B119CA /* MediaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30810C8D1E75BD3200B119CA /* MediaItem.swift */; };
 		30810C901E75BE7500B119CA /* RemoteControlManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30810C8F1E75BE7500B119CA /* RemoteControlManager.swift */; };
 		30876B9D9B4352E3DA7C0A81 /* Pods_LockScreen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDA29B134A329D7415EBFF18 /* Pods_LockScreen.framework */; };
-		30E1F0511E798BAE0073E4B1 /* LockScreenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E1F04F1E798B950073E4B1 /* LockScreenTests.swift */; };
-		30E1F0551E798BC20073E4B1 /* LockScreenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E1F0521E798BBD0073E4B1 /* LockScreenUITests.swift */; };
+		30E1F0511E798BAE0073E4B1 /* MediaRemoteControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E1F04F1E798B950073E4B1 /* MediaRemoteControlTests.swift */; };
+		30E1F0551E798BC20073E4B1 /* MediaRemoteControlUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E1F0521E798BBD0073E4B1 /* MediaRemoteControlUITests.swift */; };
 		30E228F01E76AA420047A750 /* RemoteControlActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E228EF1E76AA420047A750 /* RemoteControlActions.swift */; };
 		30ECB3751E75DF0A006183D8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 30ECB3741E75DF0A006183D8 /* Default.png */; };
 		30EF86171E793F4C0039048C /* AudioSessionActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EF86161E793F4C0039048C /* AudioSessionActions.swift */; };
 		84278A57A4B68478CB4D5475 /* Pods_LockScreenTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010AF64CF9AB6134C6C2752A /* Pods_LockScreenTests.framework */; };
+		EBD6AF426C38BB1521C6D819 /* Pods_MediaRemoteControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FA89D22D5D52DF6B4BE3850 /* Pods_MediaRemoteControl.framework */; };
+		F5E2662E2A0245982189BAAF /* Pods_MediaRemoteControlUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C2B98AC2A2C1FFF1B72EF48 /* Pods_MediaRemoteControlUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +49,9 @@
 		010AF64CF9AB6134C6C2752A /* Pods_LockScreenTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LockScreenTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BDC6BB14F488147320D6C49 /* Pods-LockScreenUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LockScreenUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LockScreenUITests/Pods-LockScreenUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		0E3E9A3BDB802CA6ED8D0FD3 /* Pods-LockScreen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LockScreen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LockScreen/Pods-LockScreen.debug.xcconfig"; sourceTree = "<group>"; };
+		1C2B98AC2A2C1FFF1B72EF48 /* Pods_MediaRemoteControlUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MediaRemoteControlUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		223E2E9FE9A7502D78A5D66F /* Pods-MediaRemoteControlTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediaRemoteControlTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MediaRemoteControlTests/Pods-MediaRemoteControlTests.release.xcconfig"; sourceTree = "<group>"; };
+		304B702E1E799AAE001BE716 /* RemoteControlManagerSpecs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteControlManagerSpecs.swift; sourceTree = "<group>"; };
 		30810C5C1E75BCE900B119CA /* MediaRemoteControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediaRemoteControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30810C5F1E75BCE900B119CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30810C611E75BCE900B119CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,15 +65,22 @@
 		30810C811E75BCEA00B119CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30810C8D1E75BD3200B119CA /* MediaItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaItem.swift; sourceTree = "<group>"; };
 		30810C8F1E75BE7500B119CA /* RemoteControlManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteControlManager.swift; sourceTree = "<group>"; };
-		30E1F04F1E798B950073E4B1 /* LockScreenTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockScreenTests.swift; sourceTree = "<group>"; };
-		30E1F0521E798BBD0073E4B1 /* LockScreenUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockScreenUITests.swift; sourceTree = "<group>"; };
+		30E1F04F1E798B950073E4B1 /* MediaRemoteControlTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaRemoteControlTests.swift; sourceTree = "<group>"; };
+		30E1F0521E798BBD0073E4B1 /* MediaRemoteControlUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaRemoteControlUITests.swift; sourceTree = "<group>"; };
 		30E228EF1E76AA420047A750 /* RemoteControlActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteControlActions.swift; sourceTree = "<group>"; };
 		30ECB3741E75DF0A006183D8 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		30EF86161E793F4C0039048C /* AudioSessionActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioSessionActions.swift; sourceTree = "<group>"; };
 		39935ABB20487C964F080585 /* Pods-LockScreenTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LockScreenTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LockScreenTests/Pods-LockScreenTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4FA89D22D5D52DF6B4BE3850 /* Pods_MediaRemoteControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MediaRemoteControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		66BFF9809F5BF200AD2EE683 /* Pods-MediaRemoteControl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediaRemoteControl.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MediaRemoteControl/Pods-MediaRemoteControl.debug.xcconfig"; sourceTree = "<group>"; };
 		6DF766782EC32D7A81464A2F /* Pods-LockScreen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LockScreen.release.xcconfig"; path = "Pods/Target Support Files/Pods-LockScreen/Pods-LockScreen.release.xcconfig"; sourceTree = "<group>"; };
+		6E0290B88E662CD4D565F046 /* Pods-MediaRemoteControlTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediaRemoteControlTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MediaRemoteControlTests/Pods-MediaRemoteControlTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7E4470435A3D5CCCCAC7E07D /* Pods_MediaRemoteControlTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MediaRemoteControlTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D6D72FC3FEFE848881EB8EE /* Pods-MediaRemoteControl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediaRemoteControl.release.xcconfig"; path = "Pods/Target Support Files/Pods-MediaRemoteControl/Pods-MediaRemoteControl.release.xcconfig"; sourceTree = "<group>"; };
 		CDA29B134A329D7415EBFF18 /* Pods_LockScreen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LockScreen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D203A14F00C156B4F143E95E /* Pods_LockScreenUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LockScreenUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5CBAA4A9E305BF547357E8D /* Pods-MediaRemoteControlUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediaRemoteControlUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MediaRemoteControlUITests/Pods-MediaRemoteControlUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D90E156728B8A3AD2D3F00C0 /* Pods-MediaRemoteControlUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediaRemoteControlUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MediaRemoteControlUITests/Pods-MediaRemoteControlUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F0E3B4D3C3055A51D8BFEF93 /* Pods-LockScreenTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LockScreenTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LockScreenTests/Pods-LockScreenTests.release.xcconfig"; sourceTree = "<group>"; };
 		F104067277FA9E168BCB7FD4 /* Pods-LockScreenUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LockScreenUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LockScreenUITests/Pods-LockScreenUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,6 +91,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				30876B9D9B4352E3DA7C0A81 /* Pods_LockScreen.framework in Frameworks */,
+				EBD6AF426C38BB1521C6D819 /* Pods_MediaRemoteControl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +100,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84278A57A4B68478CB4D5475 /* Pods_LockScreenTests.framework in Frameworks */,
+				20D6BCD8738451AC22B53B18 /* Pods_MediaRemoteControlTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +109,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04A2B13952F4DB58A3A0D92F /* Pods_LockScreenUITests.framework in Frameworks */,
+				F5E2662E2A0245982189BAAF /* Pods_MediaRemoteControlUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,7 +158,8 @@
 		30810C731E75BCE900B119CA /* MediaRemoteControl Tests */ = {
 			isa = PBXGroup;
 			children = (
-				30E1F04F1E798B950073E4B1 /* LockScreenTests.swift */,
+				304B702E1E799AAE001BE716 /* RemoteControlManagerSpecs.swift */,
+				30E1F04F1E798B950073E4B1 /* MediaRemoteControlTests.swift */,
 				30810C761E75BCE900B119CA /* Info.plist */,
 			);
 			path = "MediaRemoteControl Tests";
@@ -150,7 +168,7 @@
 		30810C7E1E75BCE900B119CA /* MediaRemoteControl UITests */ = {
 			isa = PBXGroup;
 			children = (
-				30E1F0521E798BBD0073E4B1 /* LockScreenUITests.swift */,
+				30E1F0521E798BBD0073E4B1 /* MediaRemoteControlUITests.swift */,
 				30810C811E75BCEA00B119CA /* Info.plist */,
 			);
 			path = "MediaRemoteControl UITests";
@@ -198,6 +216,12 @@
 				F0E3B4D3C3055A51D8BFEF93 /* Pods-LockScreenTests.release.xcconfig */,
 				0BDC6BB14F488147320D6C49 /* Pods-LockScreenUITests.debug.xcconfig */,
 				F104067277FA9E168BCB7FD4 /* Pods-LockScreenUITests.release.xcconfig */,
+				66BFF9809F5BF200AD2EE683 /* Pods-MediaRemoteControl.debug.xcconfig */,
+				9D6D72FC3FEFE848881EB8EE /* Pods-MediaRemoteControl.release.xcconfig */,
+				6E0290B88E662CD4D565F046 /* Pods-MediaRemoteControlTests.debug.xcconfig */,
+				223E2E9FE9A7502D78A5D66F /* Pods-MediaRemoteControlTests.release.xcconfig */,
+				D90E156728B8A3AD2D3F00C0 /* Pods-MediaRemoteControlUITests.debug.xcconfig */,
+				D5CBAA4A9E305BF547357E8D /* Pods-MediaRemoteControlUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -208,6 +232,9 @@
 				CDA29B134A329D7415EBFF18 /* Pods_LockScreen.framework */,
 				010AF64CF9AB6134C6C2752A /* Pods_LockScreenTests.framework */,
 				D203A14F00C156B4F143E95E /* Pods_LockScreenUITests.framework */,
+				4FA89D22D5D52DF6B4BE3850 /* Pods_MediaRemoteControl.framework */,
+				7E4470435A3D5CCCCAC7E07D /* Pods_MediaRemoteControlTests.framework */,
+				1C2B98AC2A2C1FFF1B72EF48 /* Pods_MediaRemoteControlUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -370,7 +397,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LockScreenTests/Pods-LockScreenTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MediaRemoteControlTests/Pods-MediaRemoteControlTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		3072377A5A1448357BDE8274 /* [CP] Check Pods Manifest.lock */ = {
@@ -400,7 +427,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LockScreenUITests/Pods-LockScreenUITests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MediaRemoteControlUITests/Pods-MediaRemoteControlUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9F805411E1FA8769DA2BCC2E /* [CP] Check Pods Manifest.lock */ = {
@@ -430,7 +457,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LockScreen/Pods-LockScreen-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MediaRemoteControl/Pods-MediaRemoteControl-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B236EBB88F7BFAE1AD9F97D4 /* [CP] Copy Pods Resources */ = {
@@ -445,7 +472,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LockScreenUITests/Pods-LockScreenUITests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MediaRemoteControlUITests/Pods-MediaRemoteControlUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C1524ABE1D07756BCE8E3E31 /* [CP] Check Pods Manifest.lock */ = {
@@ -475,7 +502,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LockScreen/Pods-LockScreen-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MediaRemoteControl/Pods-MediaRemoteControl-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F2C85C19D8F2C8C500AEBA69 /* [CP] Embed Pods Frameworks */ = {
@@ -490,7 +517,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LockScreenTests/Pods-LockScreenTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MediaRemoteControlTests/Pods-MediaRemoteControlTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -500,6 +527,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				304B702F1E799AAE001BE716 /* RemoteControlManagerSpecs.swift in Sources */,
 				30810C901E75BE7500B119CA /* RemoteControlManager.swift in Sources */,
 				30E228F01E76AA420047A750 /* RemoteControlActions.swift in Sources */,
 				30810C621E75BCE900B119CA /* ViewController.swift in Sources */,
@@ -513,7 +541,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30E1F0511E798BAE0073E4B1 /* LockScreenTests.swift in Sources */,
+				30E1F0511E798BAE0073E4B1 /* MediaRemoteControlTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,7 +549,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30E1F0551E798BC20073E4B1 /* LockScreenUITests.swift in Sources */,
+				30E1F0551E798BC20073E4B1 /* MediaRemoteControlUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -655,7 +683,7 @@
 		};
 		30810C851E75BCEA00B119CA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0E3E9A3BDB802CA6ED8D0FD3 /* Pods-LockScreen.debug.xcconfig */;
+			baseConfigurationReference = 66BFF9809F5BF200AD2EE683 /* Pods-MediaRemoteControl.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = EZKTHB6PL9;
@@ -669,7 +697,7 @@
 		};
 		30810C861E75BCEA00B119CA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6DF766782EC32D7A81464A2F /* Pods-LockScreen.release.xcconfig */;
+			baseConfigurationReference = 9D6D72FC3FEFE848881EB8EE /* Pods-MediaRemoteControl.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = EZKTHB6PL9;
@@ -683,7 +711,7 @@
 		};
 		30810C881E75BCEA00B119CA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 39935ABB20487C964F080585 /* Pods-LockScreenTests.debug.xcconfig */;
+			baseConfigurationReference = 6E0290B88E662CD4D565F046 /* Pods-MediaRemoteControlTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -698,7 +726,7 @@
 		};
 		30810C891E75BCEA00B119CA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F0E3B4D3C3055A51D8BFEF93 /* Pods-LockScreenTests.release.xcconfig */;
+			baseConfigurationReference = 223E2E9FE9A7502D78A5D66F /* Pods-MediaRemoteControlTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -713,7 +741,7 @@
 		};
 		30810C8B1E75BCEA00B119CA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0BDC6BB14F488147320D6C49 /* Pods-LockScreenUITests.debug.xcconfig */;
+			baseConfigurationReference = D90E156728B8A3AD2D3F00C0 /* Pods-MediaRemoteControlUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = LockScreenUITests/Info.plist;
@@ -727,7 +755,7 @@
 		};
 		30810C8C1E75BCEA00B119CA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F104067277FA9E168BCB7FD4 /* Pods-LockScreenUITests.release.xcconfig */;
+			baseConfigurationReference = D5CBAA4A9E305BF547357E8D /* Pods-MediaRemoteControlUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = LockScreenUITests/Info.plist;

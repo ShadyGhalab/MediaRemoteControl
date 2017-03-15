@@ -9,17 +9,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-LockScreen.xcscheme</key>
+		<key>Pods-MediaRemoteControl.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-LockScreenTests.xcscheme</key>
+		<key>Pods-MediaRemoteControlTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-LockScreenUITests.xcscheme</key>
+		<key>Pods-MediaRemoteControlUITests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Quick.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,22 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0921CC2F4398BE9A4F1CEACB30684B56</key>
+		<key>1321E318D10CFDC9F5B93A7952492CCD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3742D10AD8E066562FD36AF62BCE27E0</key>
+		<key>1563E90FE684012E96455C290F16D39A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B342FA70B836A8DFA38AD9918D21B5AB</key>
+		<key>4D6BE5C30CA6C7ADC889F1773A5A185C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FDA850A37AE7D8536D0DC972A5023C1C</key>
+		<key>89586D3ED035B2B417CFD81ACF2BFE33</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F7D9812B6984936523BC4DA3C5B69A88</key>
 		<dict>
 			<key>primary</key>
 			<true/>

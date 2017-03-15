@@ -1,5 +1,6 @@
 import Foundation
 
+
 /// A Nimble matcher that succeeds when the actual value is the same instance
 /// as the expected instance.
 public func beIdenticalTo(_ expected: Any?) -> NonNilMatcherFunc<Any> {
@@ -19,10 +20,10 @@ public func beIdenticalTo(_ expected: Any?) -> NonNilMatcherFunc<Any> {
     }
 }
 
-public func === (lhs: Expectation<Any>, rhs: Any?) {
+public func ===(lhs: Expectation<Any>, rhs: Any?) {
     lhs.to(beIdenticalTo(rhs))
 }
-public func !== (lhs: Expectation<Any>, rhs: Any?) {
+public func !==(lhs: Expectation<Any>, rhs: Any?) {
     lhs.toNot(beIdenticalTo(rhs))
 }
 

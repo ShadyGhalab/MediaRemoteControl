@@ -2,20 +2,21 @@
 # platform :ios, '9.0'
 
 
-target 'LockScreen' do
+target 'MediaRemoteControl' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
   # Pods for LockScreen
 
-  target 'LockScreenTests' do
+  target 'MediaRemoteControlTests' do
     inherit! :search_paths
     # Pods for testing
     use_frameworks!
-    pod 'Nimble', '~> 6.0.0'
+    pod 'Nimble', '~> 5.1.1'
+    pod 'Quick', '~> 1.0.0'
   end
 
-  target 'LockScreenUITests' do
+  target 'MediaRemoteControlUITests' do
     inherit! :search_paths
     # Pods for testing
   end
