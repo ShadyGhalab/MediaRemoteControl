@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04A2B13952F4DB58A3A0D92F /* Pods_LockScreenUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D203A14F00C156B4F143E95E /* Pods_LockScreenUITests.framework */; };
 		20D6BCD8738451AC22B53B18 /* Pods_MediaRemoteControlTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E4470435A3D5CCCCAC7E07D /* Pods_MediaRemoteControlTests.framework */; };
-		304B702F1E799AAE001BE716 /* RemoteControlManagerSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304B702E1E799AAE001BE716 /* RemoteControlManagerSpecs.swift */; };
+		304B70301E799E06001BE716 /* RemoteControlManagerSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304B702E1E799AAE001BE716 /* RemoteControlManagerSpecs.swift */; };
 		30810C601E75BCE900B119CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30810C5F1E75BCE900B119CA /* AppDelegate.swift */; };
 		30810C621E75BCE900B119CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30810C611E75BCE900B119CA /* ViewController.swift */; };
 		30810C651E75BCE900B119CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30810C631E75BCE900B119CA /* Main.storyboard */; };
@@ -17,13 +16,11 @@
 		30810C6A1E75BCE900B119CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30810C681E75BCE900B119CA /* LaunchScreen.storyboard */; };
 		30810C8E1E75BD3200B119CA /* MediaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30810C8D1E75BD3200B119CA /* MediaItem.swift */; };
 		30810C901E75BE7500B119CA /* RemoteControlManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30810C8F1E75BE7500B119CA /* RemoteControlManager.swift */; };
-		30876B9D9B4352E3DA7C0A81 /* Pods_LockScreen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDA29B134A329D7415EBFF18 /* Pods_LockScreen.framework */; };
 		30E1F0511E798BAE0073E4B1 /* MediaRemoteControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E1F04F1E798B950073E4B1 /* MediaRemoteControlTests.swift */; };
 		30E1F0551E798BC20073E4B1 /* MediaRemoteControlUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E1F0521E798BBD0073E4B1 /* MediaRemoteControlUITests.swift */; };
 		30E228F01E76AA420047A750 /* RemoteControlActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E228EF1E76AA420047A750 /* RemoteControlActions.swift */; };
 		30ECB3751E75DF0A006183D8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 30ECB3741E75DF0A006183D8 /* Default.png */; };
 		30EF86171E793F4C0039048C /* AudioSessionActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EF86161E793F4C0039048C /* AudioSessionActions.swift */; };
-		84278A57A4B68478CB4D5475 /* Pods_LockScreenTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010AF64CF9AB6134C6C2752A /* Pods_LockScreenTests.framework */; };
 		EBD6AF426C38BB1521C6D819 /* Pods_MediaRemoteControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FA89D22D5D52DF6B4BE3850 /* Pods_MediaRemoteControl.framework */; };
 		F5E2662E2A0245982189BAAF /* Pods_MediaRemoteControlUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C2B98AC2A2C1FFF1B72EF48 /* Pods_MediaRemoteControlUITests.framework */; };
 /* End PBXBuildFile section */
@@ -90,7 +87,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30876B9D9B4352E3DA7C0A81 /* Pods_LockScreen.framework in Frameworks */,
 				EBD6AF426C38BB1521C6D819 /* Pods_MediaRemoteControl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -99,7 +95,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84278A57A4B68478CB4D5475 /* Pods_LockScreenTests.framework in Frameworks */,
 				20D6BCD8738451AC22B53B18 /* Pods_MediaRemoteControlTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -108,7 +103,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04A2B13952F4DB58A3A0D92F /* Pods_LockScreenUITests.framework in Frameworks */,
 				F5E2662E2A0245982189BAAF /* Pods_MediaRemoteControlUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -527,7 +521,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				304B702F1E799AAE001BE716 /* RemoteControlManagerSpecs.swift in Sources */,
 				30810C901E75BE7500B119CA /* RemoteControlManager.swift in Sources */,
 				30E228F01E76AA420047A750 /* RemoteControlActions.swift in Sources */,
 				30810C621E75BCE900B119CA /* ViewController.swift in Sources */,
@@ -541,6 +534,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				304B70301E799E06001BE716 /* RemoteControlManagerSpecs.swift in Sources */,
 				30E1F0511E798BAE0073E4B1 /* MediaRemoteControlTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -628,7 +622,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -672,7 +666,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -714,10 +708,10 @@
 			baseConfigurationReference = 6E0290B88E662CD4D565F046 /* Pods-MediaRemoteControlTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = LockScreenTests/Info.plist;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				INFOPLIST_FILE = "MediaRemoteControl Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Viacom.LockScreenTests;
+				PRODUCT_BUNDLE_IDENTIFIER = Viacom.MediaRemoteControlTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MediaRemoteControl.app/MediaRemoteControl";
@@ -729,10 +723,10 @@
 			baseConfigurationReference = 223E2E9FE9A7502D78A5D66F /* Pods-MediaRemoteControlTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = LockScreenTests/Info.plist;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				INFOPLIST_FILE = "MediaRemoteControl Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Viacom.LockScreenTests;
+				PRODUCT_BUNDLE_IDENTIFIER = Viacom.MediaRemoteControlTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MediaRemoteControl.app/MediaRemoteControl";
@@ -744,12 +738,13 @@
 			baseConfigurationReference = D90E156728B8A3AD2D3F00C0 /* Pods-MediaRemoteControlUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				INFOPLIST_FILE = LockScreenUITests/Info.plist;
+				INFOPLIST_FILE = "MediaRemoteControl UITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Viacom.LockScreenUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = Viacom.MediaRemoteControlUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = LockScreen;
+				TEST_TARGET_NAME = MediaRemoteControl;
 			};
 			name = Debug;
 		};
@@ -758,12 +753,13 @@
 			baseConfigurationReference = D5CBAA4A9E305BF547357E8D /* Pods-MediaRemoteControlUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				INFOPLIST_FILE = LockScreenUITests/Info.plist;
+				INFOPLIST_FILE = "MediaRemoteControl UITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Viacom.LockScreenUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = Viacom.MediaRemoteControlUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = LockScreen;
+				TEST_TARGET_NAME = MediaRemoteControl;
 			};
 			name = Release;
 		};

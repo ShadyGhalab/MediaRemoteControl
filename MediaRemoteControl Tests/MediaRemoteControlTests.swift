@@ -9,7 +9,7 @@
 import XCTest
 @testable import MediaRemoteControl
 
-class MediaRemoteControlTests: XCTestCase {
+class LockScreenTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

@@ -145,11 +145,15 @@ class RemoteControlManager: NSObject, RemoteControlActions, AudioSessionActions 
             return .success
         }
         
-        commandCenter.changePlaybackPositionCommand.addTarget { [weak self] event in
-            if let playbackEvent = event as? MPChangePlaybackPositionCommandEvent {
-                self?.didPlaybackPositionChanged?(playbackEvent.positionTime)
+        if #available(iOS 9.1, *) {
+            commandCenter.changePlaybackPositionCommand.addTarget { [weak self] event in
+                if let playbackEvent = event as? MPChangePlaybackPositionCommandEvent {
+                    self?.didPlaybackPositionChanged?(playbackEvent.positionTime)
+                }
+                return .success
             }
-            return .success
+        } else {
+            // Fallback on earlier versions
         }
     }
     
@@ -166,20 +170,24 @@ class RemoteControlManager: NSObject, RemoteControlActions, AudioSessionActions 
     func updateNowPlayingInfo() {
         guard let mediaItem = mediaItem else { return }
        
-        let infoCenter = MPNowPlayingInfoCenter.default()
-        let mediaArt = MPMediaItemArtwork(boundsSize: mediaItem.mediaArtworkSize, requestHandler: { (size) -> UIImage in
-            return  UIImage(named:"Default")!
-        })
+        var nowPlayingInfo: [String : Any] = [:]
         
-        let nowPlayingInfo: [String : Any] = [
-            MPMediaItemPropertyTitle : mediaItem.mediaTitle,
-            MPMediaItemPropertyMediaType : MPMediaType.tvShow.rawValue,
-            MPMediaItemPropertyPlaybackDuration: CMTimeGetSeconds(mediaItem.mediaDuration) ,
-            MPMediaItemPropertyArtwork:mediaArt,
-            MPNowPlayingInfoPropertyPlaybackRate: 1.0
-        ]
-           
+        let infoCenter = MPNowPlayingInfoCenter.default()
+        if #available(iOS 10.0, *) {
+            let mediaArt = MPMediaItemArtwork(boundsSize: mediaItem.mediaArtworkSize, requestHandler: { (size) -> UIImage in
+                return mediaItem.mediaArtwork ?? UIImage(named:"Default")!
+            })
+            nowPlayingInfo[MPNowPlayingInfoPropertyPlaybackRate] = mediaArt
+        } else {
+            // Fallback on earlier versions
+        }
+        
+        nowPlayingInfo[MPMediaItemPropertyTitle] = mediaItem.mediaTitle
+        nowPlayingInfo[MPMediaItemPropertyMediaType] = MPMediaType.tvShow.rawValue
+        nowPlayingInfo[MPMediaItemPropertyPlaybackDuration] = CMTimeGetSeconds(mediaItem.mediaDuration)
+        nowPlayingInfo[MPNowPlayingInfoPropertyPlaybackRate] = 1.0
         infoCenter.nowPlayingInfo = nowPlayingInfo
+        
     }
     
     deinit {

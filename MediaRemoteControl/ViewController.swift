@@ -28,7 +28,11 @@ class ViewController: UIViewController {
         let videoURL = URL(string: "https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4")
         let player = AVPlayer(url: videoURL!)
         playerViewController.player = player
-        playerViewController.updatesNowPlayingInfoCenter = false
+        if #available(iOS 10.0, *) {
+            playerViewController.updatesNowPlayingInfoCenter = false
+        } else {
+            // Fallback on earlier versions
+        }
        
         setupRemoteControlMediaActions()
         
