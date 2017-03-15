@@ -11,7 +11,14 @@ import MediaPlayer
 
 class RemoteControlManager: NSObject, RemoteControlActions, AudioSessionActions {
 
-    var mediaItem: MediaItem?
+    fileprivate var mediaItem: MediaItem? {
+        didSet {
+            setupAudioSession()
+            setupRemoteCommandCenter()
+            registerForApplicationStatus()
+            updateNowPlayingInfo()
+        }
+    }
     
     var didTapPlay: (() -> ())?
     var didTapPause: (() -> ())?
@@ -32,11 +39,6 @@ class RemoteControlManager: NSObject, RemoteControlActions, AudioSessionActions 
         super.init()
        
         self.mediaItem = mediaItem
-                
-        setupAudioSession()
-        setupRemoteCommandCenter()
-        registerForApplicationStatus()
-        updateNowPlayingInfo()
     }
     
     fileprivate func setupAudioSession() {
@@ -171,23 +173,24 @@ class RemoteControlManager: NSObject, RemoteControlActions, AudioSessionActions 
         guard let mediaItem = mediaItem else { return }
        
         var nowPlayingInfo: [String : Any] = [:]
+        var mediaArt: MPMediaItemArtwork?
         
         let infoCenter = MPNowPlayingInfoCenter.default()
         if #available(iOS 10.0, *) {
-            let mediaArt = MPMediaItemArtwork(boundsSize: mediaItem.mediaArtworkSize, requestHandler: { (size) -> UIImage in
+            mediaArt = MPMediaItemArtwork(boundsSize: mediaItem.mediaArtworkSize, requestHandler: { (size) -> UIImage in
                 return mediaItem.mediaArtwork ?? UIImage(named:"Default")!
             })
-            nowPlayingInfo[MPNowPlayingInfoPropertyPlaybackRate] = mediaArt
         } else {
-            // Fallback on earlier versions
+            mediaArt = MPMediaItemArtwork(image: mediaItem.mediaArtwork ?? UIImage(named:"Default")!)
         }
         
+        nowPlayingInfo[MPNowPlayingInfoPropertyPlaybackRate] = mediaArt
         nowPlayingInfo[MPMediaItemPropertyTitle] = mediaItem.mediaTitle
         nowPlayingInfo[MPMediaItemPropertyMediaType] = MPMediaType.tvShow.rawValue
         nowPlayingInfo[MPMediaItemPropertyPlaybackDuration] = CMTimeGetSeconds(mediaItem.mediaDuration)
         nowPlayingInfo[MPNowPlayingInfoPropertyPlaybackRate] = 1.0
+       
         infoCenter.nowPlayingInfo = nowPlayingInfo
-        
     }
     
     deinit {
