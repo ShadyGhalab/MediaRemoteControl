@@ -17,8 +17,9 @@ struct MediaItem {
     let mediaArtwork: UIImage?
     let mediaArtworkSize: CGSize
     let mediaDuration: CMTime
-    var skipForwardIntervals: NSNumber = 30
-    var skipBackwardIntervals: NSNumber = 30
+    var skipForwardIntervals: NSNumber = 10
+    var skipBackwardIntervals: NSNumber = 10
+    var brandName: String?
     
     init(mediaTitle: String, mediaDescription: String, mediaNumber: Int?, mediaDuration: CMTime, mediaArtwork: UIImage? = UIImage(named:"Defaults"), mediaArtworkSize: CGSize) {
         self.mediaTitle = mediaTitle

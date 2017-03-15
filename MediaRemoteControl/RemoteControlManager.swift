@@ -37,8 +37,10 @@ class RemoteControlManager: NSObject, RemoteControlActions, AudioSessionActions 
     
      init(with mediaItem: MediaItem) {
         super.init()
-       
-        self.mediaItem = mediaItem
+        
+        defer {
+             self.mediaItem = mediaItem
+        }
     }
     
     fileprivate func setupAudioSession() {
@@ -102,8 +104,8 @@ class RemoteControlManager: NSObject, RemoteControlActions, AudioSessionActions 
       
         commandCenter.skipForwardCommand.isEnabled = true
         commandCenter.skipBackwardCommand.isEnabled = true
-        commandCenter.skipForwardCommand.preferredIntervals = [mediaItem?.skipForwardIntervals ?? 30]
-        commandCenter.skipBackwardCommand.preferredIntervals = [mediaItem?.skipBackwardIntervals ?? 30]
+        commandCenter.skipForwardCommand.preferredIntervals = [mediaItem?.skipForwardIntervals ?? 10]
+        commandCenter.skipBackwardCommand.preferredIntervals = [mediaItem?.skipBackwardIntervals ?? 10]
 
         commandCenter.playCommand.isEnabled = true
         commandCenter.pauseCommand.isEnabled = true
@@ -159,7 +161,7 @@ class RemoteControlManager: NSObject, RemoteControlActions, AudioSessionActions 
         }
     }
     
-    func registerForApplicationStatus() {
+    fileprivate func registerForApplicationStatus() {
         NotificationCenter.default.addObserver(self, selector: #selector(applicationDidBecomeActive),
                                                name: .UIApplicationDidBecomeActive,
                                                object: nil)
@@ -169,7 +171,7 @@ class RemoteControlManager: NSObject, RemoteControlActions, AudioSessionActions 
         try? AVAudioSession.sharedInstance().setActive(true)
     }
     
-    func updateNowPlayingInfo() {
+    fileprivate func updateNowPlayingInfo() {
         guard let mediaItem = mediaItem else { return }
        
         var nowPlayingInfo: [String : Any] = [:]
@@ -184,12 +186,12 @@ class RemoteControlManager: NSObject, RemoteControlActions, AudioSessionActions 
             mediaArt = MPMediaItemArtwork(image: mediaItem.mediaArtwork ?? UIImage(named:"Default")!)
         }
         
-        nowPlayingInfo[MPNowPlayingInfoPropertyPlaybackRate] = mediaArt
+        nowPlayingInfo[MPMediaItemPropertyArtwork] = mediaArt
         nowPlayingInfo[MPMediaItemPropertyTitle] = mediaItem.mediaTitle
         nowPlayingInfo[MPMediaItemPropertyMediaType] = MPMediaType.tvShow.rawValue
         nowPlayingInfo[MPMediaItemPropertyPlaybackDuration] = CMTimeGetSeconds(mediaItem.mediaDuration)
         nowPlayingInfo[MPNowPlayingInfoPropertyPlaybackRate] = 1.0
-       
+        nowPlayingInfo[MPMediaItemPropertyAlbumTitle] = mediaItem.mediaDescription
         infoCenter.nowPlayingInfo = nowPlayingInfo
     }
     

@@ -46,7 +46,7 @@ class ViewController: UIViewController {
         let mediaItem = MediaItem(mediaTitle: "Teacher", mediaDescription: "Play with his kids!", mediaNumber: 5, mediaDuration: (self.playerViewController.player?.currentItem?.asset.duration)!, mediaArtwork: nil, mediaArtworkSize: CGSize(width: 200, height: 200))
         
         remoteControlManager = RemoteControlManager(with: mediaItem)
-        
+
         remoteControlManager?.didTapPlay = { [weak self] in
             self?.playerViewController.player!.play()
         }
