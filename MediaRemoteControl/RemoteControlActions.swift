@@ -29,10 +29,10 @@ protocol RemoteControlActions {
     var didSeekBackward: (() -> ())? { get set }
     
     /// This will be called when the user press the skip forward button.
-    var didSkipForward: ((Double?) -> ())? { get set }
+    var didSkipForward: ((TimeInterval) -> ())? { get set }
     
     /// This will be called when the user press the skip backward button.
-    var didSkipBackward: ((Double?) -> ())? { get set }
+    var didSkipBackward: ((TimeInterval) -> ())? { get set }
 
     /// This will be called when the user changed the slider value.
     var didPlaybackPositionChanged:((TimeInterval) -> ())? { get set }
