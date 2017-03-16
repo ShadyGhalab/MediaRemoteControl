@@ -26,8 +26,8 @@ class RemoteControlManager: NSObject, RemoteControlActions, AudioSessionActions 
     var didTapPrevious: (() -> ())?
     var didSeekForward: (() -> ())?
     var didSeekBackward: (() -> ())?
-    var didSkipForward: ((Double?) -> ())?
-    var didSkipBackward: ((Double?) -> ())?
+    var didSkipForward: ((TimeInterval) -> ())?
+    var didSkipBackward: ((TimeInterval) -> ())?
     var didPlaybackPositionChanged: ((TimeInterval) -> ())?
     
     var didAudioSessionRouteChanged: ((AVAudioSessionRouteDescription) -> ())?
