@@ -85,7 +85,7 @@ class RemoteControlManagerSpecs: QuickSpec {
                 }
             }
             
-            context("Audio session Interruption") {
+            context("Audio session Interruption ended") {
                 it("should resume your media playback") {
                     var canResumePlayback = false
                     
@@ -97,6 +97,24 @@ class RemoteControlManagerSpecs: QuickSpec {
                     expect(canResumePlayback) == true
                 }
             }
+            
+            context("Audio session Interruption ended") {
+                it("shouldn't resume your media playback") {
+                    var canResumePlayback = false
+                    
+                    self.remoteControlManager.didSessionInterruptionRouteEnd = {
+                        canResumePlayback = true
+                    }
+                    
+                    NotificationCenter.default.post(name: .AVAudioSessionInterruption, object: nil, userInfo: [AVAudioSessionInterruptionTypeKey: AVAudioSessionInterruptionType.ended.rawValue])
+                    expect(canResumePlayback) == false
+                }
+            }
+        }
+        
+        describe("setupRemoteCommandCenter") {
+        
+        
         }
     }
 }

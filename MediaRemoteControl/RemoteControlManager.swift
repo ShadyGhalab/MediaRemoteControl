@@ -24,10 +24,10 @@ class RemoteControlManager: NSObject, RemoteControlActions, AudioSessionActions 
     var didTapPause: (() -> ())?
     var didTapNext: (() -> ())?
     var didTapPrevious: (() -> ())?
-    var didSeekForward: (() -> ())?
-    var didSeekBackward: (() -> ())?
-    var didSkipForward: ((TimeInterval) -> ())?
-    var didSkipBackward: ((TimeInterval) -> ())?
+    var didTapSeekForward: (() -> ())?
+    var didTapSeekBackward: (() -> ())?
+    var didTapSkipForward: ((TimeInterval) -> ())?
+    var didTapSkipBackward: ((TimeInterval) -> ())?
     var didPlaybackPositionChanged: ((TimeInterval) -> ())?
     
     var didAudioSessionRouteChanged: ((AVAudioSessionRouteDescription) -> ())?
@@ -35,7 +35,7 @@ class RemoteControlManager: NSObject, RemoteControlActions, AudioSessionActions 
     var didAnotherAppPrimaryAudioStop: (() -> ())?
     var didSessionInterruptionRouteEnd: (() -> ())?
     
-     init(with mediaItem: MediaItem) {
+    init(with mediaItem: MediaItem) {
         super.init()
         
         defer {
@@ -81,20 +81,6 @@ class RemoteControlManager: NSObject, RemoteControlActions, AudioSessionActions 
         }
     }
     
-    fileprivate func tearDownAudioSession() {
-        do {
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
-            try AVAudioSession.sharedInstance().setActive(false, with: .notifyOthersOnDeactivation)
-        } catch {
-            print(error)
-        }
-        
-        NotificationCenter.default.removeObserver(self, name: .UIApplicationDidBecomeActive, object: nil)
-        NotificationCenter.default.removeObserver(self, name: .AVAudioSessionRouteChange, object: nil)
-        NotificationCenter.default.removeObserver(self, name: .AVAudioSessionSilenceSecondaryAudioHint, object: nil)
-        NotificationCenter.default.removeObserver(self, name: .AVAudioSessionInterruption, object: nil)
-    }
-    
     fileprivate func setupRemoteCommandCenter() {
     
         UIApplication.shared.beginReceivingRemoteControlEvents()
@@ -105,18 +91,6 @@ class RemoteControlManager: NSObject, RemoteControlActions, AudioSessionActions 
         commandCenter.skipBackwardCommand.isEnabled = true
         commandCenter.skipForwardCommand.preferredIntervals = [mediaItem?.skipForwardIntervals ?? 10]
         commandCenter.skipBackwardCommand.preferredIntervals = [mediaItem?.skipBackwardIntervals ?? 10]
-
-        commandCenter.playCommand.isEnabled = true
-        commandCenter.pauseCommand.isEnabled = true
-
-        commandCenter.nextTrackCommand.isEnabled = false
-        commandCenter.previousTrackCommand.isEnabled = false
-        
-        commandCenter.seekForwardCommand.isEnabled = true
-        commandCenter.seekBackwardCommand.isEnabled = true
-       
-        commandCenter.playCommand.isEnabled = true
-        commandCenter.pauseCommand.isEnabled = true
         
         commandCenter.playCommand.addTarget { [weak self] event in
             self?.didTapPlay?()
@@ -130,25 +104,25 @@ class RemoteControlManager: NSObject, RemoteControlActions, AudioSessionActions 
         
         commandCenter.skipForwardCommand.addTarget { [weak self] event in
             if let seekForwardEvent = event as? MPSkipIntervalCommandEvent {
-                self?.didSkipBackward?(seekForwardEvent.interval)
+                self?.didTapSkipBackward?(seekForwardEvent.interval)
             }
             return .success
         }
        
         commandCenter.skipBackwardCommand.addTarget { [weak self] event in
             if let seekBackwardEvent = event as? MPSkipIntervalCommandEvent {
-                self?.didSkipForward?(seekBackwardEvent.interval)
+                self?.didTapSkipForward?(seekBackwardEvent.interval)
             }
             return .success
         }
         
         commandCenter.seekForwardCommand.addTarget { [weak self] event in
-            self?.didSeekForward?()
+            self?.didTapSeekForward?()
             return .success
         }
         
         commandCenter.seekBackwardCommand.addTarget { [weak self] event in
-            self?.didSeekBackward?()
+            self?.didTapSeekBackward?()
             return .success
         }
         
@@ -196,6 +170,20 @@ class RemoteControlManager: NSObject, RemoteControlActions, AudioSessionActions 
         nowPlayingInfo[MPNowPlayingInfoPropertyPlaybackRate] = 1.0
         nowPlayingInfo[MPMediaItemPropertyAlbumTitle] = mediaItem.mediaDescription
         infoCenter.nowPlayingInfo = nowPlayingInfo
+    }
+    
+    fileprivate func tearDownAudioSession() {
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
+            try AVAudioSession.sharedInstance().setActive(false, with: .notifyOthersOnDeactivation)
+        } catch {
+            print(error)
+        }
+        
+        NotificationCenter.default.removeObserver(self, name: .UIApplicationDidBecomeActive, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .AVAudioSessionRouteChange, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .AVAudioSessionSilenceSecondaryAudioHint, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .AVAudioSessionInterruption, object: nil)
     }
     
     deinit {

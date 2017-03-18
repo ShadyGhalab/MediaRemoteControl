@@ -23,16 +23,16 @@ protocol RemoteControlActions: class {
     var didTapPrevious: (() -> ())? { get }
     
     /// call when the user press the seek forward button.
-    var didSeekForward: (() -> ())? { get }
+    var didTapSeekForward: (() -> ())? { get }
     
     /// call when the user press the seek backward button.
-    var didSeekBackward: (() -> ())? { get }
+    var didTapSeekBackward: (() -> ())? { get }
     
     /// call when the user press the skip forward button.
-    var didSkipForward: ((TimeInterval) -> ())? { get }
+    var didTapSkipForward: ((TimeInterval) -> ())? { get }
     
     /// call when the user press the skip backward button.
-    var didSkipBackward: ((TimeInterval) -> ())? { get }
+    var didTapSkipBackward: ((TimeInterval) -> ())? { get }
 
     /// call when the user changed the slider value.
     var didPlaybackPositionChanged:((TimeInterval) -> ())? { get }

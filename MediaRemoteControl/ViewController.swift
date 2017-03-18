@@ -55,11 +55,11 @@ class ViewController: UIViewController {
             self?.playerViewController.player!.pause()
         }
         
-        remoteControlManager?.didSkipForward = { [weak self] skipForwardInterval in
+        remoteControlManager?.didTapSkipForward = { [weak self] skipForwardInterval in
             self?.playerViewController.player!.seek(to: CMTimeSubtract((self?.playerViewController.player!.currentTime())!, CMTimeMakeWithSeconds(skipForwardInterval, (self?.playerViewController.player!.currentTime().timescale)!)))
         }
         
-        remoteControlManager?.didSkipBackward = { [weak self] skipBackwardInterval in
+        remoteControlManager?.didTapSkipBackward = { [weak self] skipBackwardInterval in
             self?.playerViewController.player!.seek(to: CMTimeSubtract((self?.playerViewController.player!.currentTime())!, CMTimeMakeWithSeconds(skipBackwardInterval, (self?.playerViewController.player!.currentTime().timescale)!)))
         }
         
