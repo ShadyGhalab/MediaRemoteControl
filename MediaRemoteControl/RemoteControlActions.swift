@@ -35,5 +35,5 @@ protocol RemoteControlActions: class {
     var didTapSkipBackward: ((TimeInterval) -> ())? { get }
 
     /// call when the user changed the slider value.
-    var didPlaybackPositionChanged:((TimeInterval) -> ())? { get }
+    var didPlaybackPositionChange:((TimeInterval) -> ())? { get }
 }

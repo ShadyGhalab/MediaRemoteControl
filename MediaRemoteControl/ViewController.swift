@@ -25,20 +25,20 @@ class ViewController: UIViewController {
         
         self.becomeFirstResponder()
 
-        let videoURL = URL(string: "https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4")
-        let player = AVPlayer(url: videoURL!)
-        playerViewController.player = player
-        if #available(iOS 10.0, *) {
-            playerViewController.updatesNowPlayingInfoCenter = false
-        } else {
-            // Fallback on earlier versions
-        }
-       
-        setupRemoteControlMediaActions()
-        
-        self.present(playerViewController, animated: true) {
-            self.playerViewController.player!.play()
-        }
+//        let videoURL = URL(string: "https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4")
+//        let player = AVPlayer(url: videoURL!)
+//        playerViewController.player = player
+//        if #available(iOS 10.0, *) {
+//            playerViewController.updatesNowPlayingInfoCenter = false
+//        } else {
+//            // Fallback on earlier versions
+//        }
+//       
+//        setupRemoteControlMediaActions()
+//        
+//        self.present(playerViewController, animated: true) {
+//            self.playerViewController.player!.play()
+//        }
     }
     
     func setupRemoteControlMediaActions() {
@@ -67,7 +67,7 @@ class ViewController: UIViewController {
             self?.playerViewController.player!.seek(to: CMTimeSubtract((self?.playerViewController.player!.currentTime())!, CMTimeMakeWithSeconds(skipBackwardInterval, (self?.playerViewController.player!.currentTime().timescale)!)))
         }
         
-        remoteControlManager?.didPlaybackPositionChanged = { [weak self] positionTime in
+        remoteControlManager?.didPlaybackPositionChange = { [weak self] positionTime in
             self?.playerViewController.player?.seek(to: CMTimeMakeWithSeconds(positionTime, 1000000))
         }
     }

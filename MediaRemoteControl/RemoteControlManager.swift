@@ -28,9 +28,9 @@ class RemoteControlManager: NSObject, RemoteControlActions, AudioSessionActions 
     var didTapSeekBackward: (() -> ())?
     var didTapSkipForward: ((TimeInterval) -> ())?
     var didTapSkipBackward: ((TimeInterval) -> ())?
-    var didPlaybackPositionChanged: ((TimeInterval) -> ())?
+    var didPlaybackPositionChange: ((TimeInterval) -> ())?
     
-    var didAudioSessionRouteChanged: ((AVAudioSessionRouteDescription) -> ())?
+    var didAudioSessionRouteChange: ((AVAudioSessionRouteDescription) -> ())?
     var didAnotherAppPrimaryAudioStart: (() -> ())?
     var didAnotherAppPrimaryAudioStop: (() -> ())?
     var didSessionInterruptionRouteEnd: (() -> ())?
@@ -51,34 +51,44 @@ class RemoteControlManager: NSObject, RemoteControlActions, AudioSessionActions 
         } catch {
             print(error)
         }
-        
-        NotificationCenter.default.addObserver(forName: .AVAudioSessionRouteChange, object: nil, queue: nil) { [weak self]
-            n in
-               self?.didAudioSessionRouteChanged?(AVAudioSession.sharedInstance().currentRoute)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(audioSessionRouteChange), name: .AVAudioSessionRouteChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(audioSessionSilenceSecondaryAudioHint), name: .AVAudioSessionSilenceSecondaryAudioHint, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(audioSessionInterruption), name: .AVAudioSessionInterruption, object: nil)
+    }
+    
+    func audioSessionRouteChange() {
+        self.didAudioSessionRouteChange!(AVAudioSession.sharedInstance().currentRoute)
+    }
+    
+    func audioSessionSilenceSecondaryAudioHint(notification: Notification) {
+        guard let rawValue = notification.userInfo?[AVAudioSessionSilenceSecondaryAudioHintTypeKey] as? UInt else { return }
+        let why = AVAudioSessionSilenceSecondaryAudioHintType(rawValue: rawValue)
+        if why == .begin {
+            self.didAnotherAppPrimaryAudioStart?()
+        } else {
+            self.didAnotherAppPrimaryAudioStop?()
         }
-        
-        NotificationCenter.default.addObserver(forName: .AVAudioSessionSilenceSecondaryAudioHint,
-                                               object: nil, queue: nil) { [weak self]
-            n in
-            guard let rawValue = n.userInfo?[AVAudioSessionSilenceSecondaryAudioHintTypeKey] as? UInt else { return }
-            let why = AVAudioSessionSilenceSecondaryAudioHintType(rawValue: rawValue)
-            if why == .begin {
-                self?.didAnotherAppPrimaryAudioStart?()
-            } else {
-                self?.didAnotherAppPrimaryAudioStop?()
-            }
+    }
+    
+   func audioSessionInterruption(notification: Notification) {
+        guard let rawValue = notification.userInfo?[AVAudioSessionInterruptionTypeKey] as? UInt else { return }
+        let why = AVAudioSessionInterruptionType(rawValue: rawValue)
+        if why == .began {
+            print("interruption began:\n\(notification.userInfo)")
+        } else if let userInfo = notification.userInfo, let opt = userInfo[AVAudioSessionInterruptionOptionKey] as? UInt, AVAudioSessionInterruptionOptions(rawValue:opt).contains(.shouldResume) {
+            self.didSessionInterruptionRouteEnd?()
         }
-        
-        NotificationCenter.default.addObserver(forName: .AVAudioSessionInterruption, object: nil, queue: nil) { [weak self]
-            n in
-            guard let rawValue = n.userInfo?[AVAudioSessionInterruptionTypeKey] as? UInt else { return }
-            let why = AVAudioSessionInterruptionType(rawValue: rawValue)
-            if why == .began {
-                print("interruption began:\n\(n.userInfo!)")
-            } else if let userInfo = n.userInfo, let opt = userInfo[AVAudioSessionInterruptionOptionKey] as? UInt, AVAudioSessionInterruptionOptions(rawValue:opt).contains(.shouldResume) {
-                self?.didSessionInterruptionRouteEnd?()
-            }
-        }
+    }
+    
+    fileprivate func registerForApplicationStatus() {
+        NotificationCenter.default.addObserver(self, selector: #selector(applicationDidBecomeActive),
+                                               name: .UIApplicationDidBecomeActive,
+                                               object: nil)
+    }
+    
+    func applicationDidBecomeActive() {
+        try? AVAudioSession.sharedInstance().setActive(true)
     }
     
     fileprivate func setupRemoteCommandCenter() {
@@ -127,7 +137,7 @@ class RemoteControlManager: NSObject, RemoteControlActions, AudioSessionActions 
         if #available(iOS 9.1, *) {
             commandCenter.changePlaybackPositionCommand.addTarget { [weak self] event in
                 if let playbackEvent = event as? MPChangePlaybackPositionCommandEvent {
-                    self?.didPlaybackPositionChanged?(playbackEvent.positionTime)
+                    self?.didPlaybackPositionChange?(playbackEvent.positionTime)
                 }
                 return .success
             }
@@ -136,41 +146,38 @@ class RemoteControlManager: NSObject, RemoteControlActions, AudioSessionActions 
         }
     }
     
-    fileprivate func registerForApplicationStatus() {
-        NotificationCenter.default.addObserver(self, selector: #selector(applicationDidBecomeActive),
-                                               name: .UIApplicationDidBecomeActive,
-                                               object: nil)
-    }
-    
-    @objc fileprivate func applicationDidBecomeActive() {
-        try? AVAudioSession.sharedInstance().setActive(true)
-    }
-    
     fileprivate func updateNowPlayingInfo() {
         guard let mediaItem = mediaItem else { return }
        
         var nowPlayingInfo: [String : Any] = [:]
-        var mediaArt: MPMediaItemArtwork?
+                
+        setMediaArtworkIfNeeded(nowPlayingInfo: &nowPlayingInfo)
         
-        let infoCenter = MPNowPlayingInfoCenter.default()
-        if #available(iOS 10.0, *) {
-            mediaArt = MPMediaItemArtwork(boundsSize: mediaItem.mediaArtworkSize, requestHandler: { (size) -> UIImage in
-                return mediaItem.mediaArtwork ?? UIImage(named:"Default")!
-            })
-        } else {
-            mediaArt = MPMediaItemArtwork(image: mediaItem.mediaArtwork ?? UIImage(named:"Default")!)
-        }
-        
-        nowPlayingInfo[MPMediaItemPropertyArtwork] = mediaArt
         nowPlayingInfo[MPMediaItemPropertyTitle] = mediaItem.mediaTitle
         nowPlayingInfo[MPMediaItemPropertyMediaType] = MPMediaType.tvShow.rawValue
         nowPlayingInfo[MPMediaItemPropertyPlaybackDuration] = CMTimeGetSeconds(mediaItem.mediaDuration)
         nowPlayingInfo[MPNowPlayingInfoPropertyPlaybackRate] = 1.0
         nowPlayingInfo[MPMediaItemPropertyAlbumTitle] = mediaItem.mediaDescription
-        infoCenter.nowPlayingInfo = nowPlayingInfo
+       
+        MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
     }
     
-    fileprivate func tearDownAudioSession() {
+    func setMediaArtworkIfNeeded(nowPlayingInfo: inout [String : Any]) {
+        guard let imageArt = mediaItem?.mediaArtwork, let size = mediaItem?.mediaArtworkSize else { return }
+        var mediaArt: MPMediaItemArtwork?
+      
+        if #available(iOS 10.0, *) {
+            mediaArt = MPMediaItemArtwork(boundsSize: size, requestHandler: { (size) -> UIImage in
+                return imageArt
+            })
+        } else {
+            mediaArt = MPMediaItemArtwork(image: imageArt)
+        }
+        
+        nowPlayingInfo[MPMediaItemPropertyArtwork] = mediaArt
+    }
+    
+    func tearDownAudioSession() {
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
             try AVAudioSession.sharedInstance().setActive(false, with: .notifyOthersOnDeactivation)

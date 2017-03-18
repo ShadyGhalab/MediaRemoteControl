@@ -12,7 +12,7 @@ import MediaPlayer
 protocol AudioSessionActions: class {
     
     /// call when a route change has occurred.
-    var didAudioSessionRouteChanged: ((AVAudioSessionRouteDescription) -> ())? { get }
+    var didAudioSessionRouteChange: ((AVAudioSessionRouteDescription) -> ())? { get }
     
     /// Use control center to test, e.g. start and stop a Music song When your app in the foreground.
     /// call when the system is indicating that another application's primary audio has started.

@@ -47,7 +47,7 @@ class RemoteControlManagerSpecs: QuickSpec {
                     var portType: String?
                     var portName: String?
 
-                    self.remoteControlManager.didAudioSessionRouteChanged = { routeDescription in
+                    self.remoteControlManager.didAudioSessionRouteChange = { routeDescription in
                         isAudioRouteChanged = true
                         portType = routeDescription.outputs.first?.portType
                         portName = routeDescription.outputs.first?.portName
@@ -55,8 +55,10 @@ class RemoteControlManagerSpecs: QuickSpec {
                     
                     NotificationCenter.default.post(name: .AVAudioSessionRouteChange, object: nil)
                     expect(isAudioRouteChanged) == true
-                    expect(portType) == AVAudioSessionPortBuiltInSpeaker
-                    expect(portName) == AVAudioSessionPortBuiltInSpeaker
+                   if #available(iOS 10.0, *) {
+                        expect(portType) == AVAudioSessionPortBuiltInSpeaker
+                        expect(portName) == AVAudioSessionPortBuiltInSpeaker
+                    }
                 }                
             }
             
@@ -143,10 +145,70 @@ class RemoteControlManagerSpecs: QuickSpec {
         }
         
         describe("updateNowPlayingInfo") {
+            context("when the mediaItem has been set") {
+                it("should nowPlayingInfo has the same values from media Item") {
+                    let infoCenter = MPNowPlayingInfoCenter.default()
+                    
+                    expect(infoCenter.nowPlayingInfo?[MPMediaItemPropertyTitle] as? String) == self.mediaItem.mediaTitle
+                    expect(infoCenter.nowPlayingInfo?[MPMediaItemPropertyMediaType] as? UInt) == MPMediaType.tvShow.rawValue
+                    expect(infoCenter.nowPlayingInfo?[MPMediaItemPropertyPlaybackDuration] as? Float64) == CMTimeGetSeconds(self.mediaItem.mediaDuration)
+                    expect(infoCenter.nowPlayingInfo?[MPNowPlayingInfoPropertyPlaybackRate] as? NSNumber) == 1.0
+                    expect(infoCenter.nowPlayingInfo?[MPMediaItemPropertyAlbumTitle] as? String) == self.mediaItem.mediaDescription
+                   
+                    if #available(iOS 10.0, *) {
+                        expect((infoCenter.nowPlayingInfo?[MPMediaItemPropertyArtwork] as? MPMediaItemArtwork)?.image(at: self.mediaItem.mediaArtworkSize)) == MPMediaItemArtwork(boundsSize: self.mediaItem.mediaArtworkSize, requestHandler: { (size) -> UIImage in
+                            return self.mediaItem.mediaArtwork!
+                        }).image(at: self.mediaItem.mediaArtworkSize)
+                    } else {
+                        expect((infoCenter.nowPlayingInfo?[MPMediaItemPropertyArtwork] as? MPMediaItemArtwork)?.image(at: self.mediaItem.mediaArtworkSize)) == MPMediaItemArtwork(image: self.mediaItem.mediaArtwork!).image(at: self.mediaItem.mediaArtworkSize)
+                    }
+                }
+            }
+        }
         
-        
-        
-        
+        describe("tearDownAudioSession") {
+            context("when the the RemoteControlManager deinit has called") {
+                
+                beforeEach {
+                    self.remoteControlManager.tearDownAudioSession()
+                }
+                
+                it("should the Audio session's category be AVAudioSessionCategoryAmbient") {
+                    expect(AVAudioSession.sharedInstance().category) == AVAudioSessionCategoryAmbient
+                }
+                
+                it("shouldn't call didAudioSessionRouteChange") {
+                    var isAudioRouteChanged = false
+                    self.remoteControlManager.didAudioSessionRouteChange = { routeDescription in
+                        isAudioRouteChanged = true
+                    }
+                    
+                    NotificationCenter.default.post(name: .AVAudioSessionRouteChange, object: nil)
+                    expect(isAudioRouteChanged) == false
+                }
+                
+                it("shouldn't call didAnotherAppPrimaryAudioStart") {
+                    var isAnotherPrimaryAudioStart = false
+                    
+                    self.remoteControlManager.didAnotherAppPrimaryAudioStart = { routeDescription in
+                        isAnotherPrimaryAudioStart = true
+                    }
+                    
+                    NotificationCenter.default.post(name: .AVAudioSessionSilenceSecondaryAudioHint, object: nil, userInfo: [AVAudioSessionSilenceSecondaryAudioHintTypeKey: AVAudioSessionSilenceSecondaryAudioHintType.begin.rawValue])
+                    expect(isAnotherPrimaryAudioStart) == false
+                }
+                
+                it("shouldn't resume your media playback") {
+                    var canResumePlayback = false
+                    
+                    self.remoteControlManager.didSessionInterruptionRouteEnd = {
+                        canResumePlayback = true
+                    }
+                    
+                    NotificationCenter.default.post(name: .AVAudioSessionInterruption, object: nil, userInfo: [AVAudioSessionInterruptionOptionKey: AVAudioSessionInterruptionOptions.shouldResume.rawValue, AVAudioSessionInterruptionTypeKey: AVAudioSessionInterruptionType.ended.rawValue])
+                    expect(canResumePlayback) == false
+                }
+            }
         }
     }
 }
