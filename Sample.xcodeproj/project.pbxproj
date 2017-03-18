@@ -31,7 +31,10 @@
 		30E228F01E76AA420047A750 /* RemoteControlActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E228EF1E76AA420047A750 /* RemoteControlActions.swift */; };
 		30ECB3751E75DF0A006183D8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 30ECB3741E75DF0A006183D8 /* Default.png */; };
 		30EF86171E793F4C0039048C /* AudioSessionActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EF86161E793F4C0039048C /* AudioSessionActions.swift */; };
+		5F918CF09768816CC6A4A84C /* Pods_SampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB6D8738E205C1FB21910E63 /* Pods_SampleUITests.framework */; };
+		5FAC42363A5CF1CCA4972EE7 /* Pods_SampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B3CBDFC7E601D46C484D912 /* Pods_SampleTests.framework */; };
 		EBD6AF426C38BB1521C6D819 /* Pods_MediaRemoteControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FA89D22D5D52DF6B4BE3850 /* Pods_MediaRemoteControl.framework */; };
+		F4A6648AB6F55DEB5EB9C8CA /* Pods_Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EBBFFA30DB5E42824DF2F92 /* Pods_Sample.framework */; };
 		F5E2662E2A0245982189BAAF /* Pods_MediaRemoteControlUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C2B98AC2A2C1FFF1B72EF48 /* Pods_MediaRemoteControlUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,8 +80,10 @@
 		010AF64CF9AB6134C6C2752A /* Pods_LockScreenTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LockScreenTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BDC6BB14F488147320D6C49 /* Pods-LockScreenUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LockScreenUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LockScreenUITests/Pods-LockScreenUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		0E3E9A3BDB802CA6ED8D0FD3 /* Pods-LockScreen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LockScreen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LockScreen/Pods-LockScreen.debug.xcconfig"; sourceTree = "<group>"; };
+		0EBBFFA30DB5E42824DF2F92 /* Pods_Sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C2B98AC2A2C1FFF1B72EF48 /* Pods_MediaRemoteControlUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MediaRemoteControlUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		223E2E9FE9A7502D78A5D66F /* Pods-MediaRemoteControlTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediaRemoteControlTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MediaRemoteControlTests/Pods-MediaRemoteControlTests.release.xcconfig"; sourceTree = "<group>"; };
+		2B3CBDFC7E601D46C484D912 /* Pods_SampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		303E540D1E79D4EB0047DF63 /* MediaRemoteControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MediaRemoteControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		303E540F1E79D4EB0047DF63 /* MediaRemoteControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MediaRemoteControl.h; sourceTree = "<group>"; };
 		303E54101E79D4EB0047DF63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -103,15 +108,22 @@
 		30EF86161E793F4C0039048C /* AudioSessionActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioSessionActions.swift; sourceTree = "<group>"; };
 		39935ABB20487C964F080585 /* Pods-LockScreenTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LockScreenTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LockScreenTests/Pods-LockScreenTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4FA89D22D5D52DF6B4BE3850 /* Pods_MediaRemoteControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MediaRemoteControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		572D8CF2AE67456D3BA47F46 /* Pods-Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sample/Pods-Sample.debug.xcconfig"; sourceTree = "<group>"; };
+		6268DAC6CD72C146DB71CCB6 /* Pods-SampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SampleTests/Pods-SampleTests.release.xcconfig"; sourceTree = "<group>"; };
+		64952AB4075349FB2F93BDF2 /* Pods-SampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SampleTests/Pods-SampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		66BFF9809F5BF200AD2EE683 /* Pods-MediaRemoteControl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediaRemoteControl.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MediaRemoteControl/Pods-MediaRemoteControl.debug.xcconfig"; sourceTree = "<group>"; };
 		6DF766782EC32D7A81464A2F /* Pods-LockScreen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LockScreen.release.xcconfig"; path = "Pods/Target Support Files/Pods-LockScreen/Pods-LockScreen.release.xcconfig"; sourceTree = "<group>"; };
 		6E0290B88E662CD4D565F046 /* Pods-MediaRemoteControlTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediaRemoteControlTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MediaRemoteControlTests/Pods-MediaRemoteControlTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7E4470435A3D5CCCCAC7E07D /* Pods_MediaRemoteControlTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MediaRemoteControlTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CC40A698661901F4E633F3A /* Pods-SampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SampleUITests/Pods-SampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		965DF05520814D14DE956FD2 /* Pods-SampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SampleUITests/Pods-SampleUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9D6D72FC3FEFE848881EB8EE /* Pods-MediaRemoteControl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediaRemoteControl.release.xcconfig"; path = "Pods/Target Support Files/Pods-MediaRemoteControl/Pods-MediaRemoteControl.release.xcconfig"; sourceTree = "<group>"; };
+		B6592A3C04F06003AB8E779B /* Pods-Sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sample/Pods-Sample.release.xcconfig"; sourceTree = "<group>"; };
 		CDA29B134A329D7415EBFF18 /* Pods_LockScreen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LockScreen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D203A14F00C156B4F143E95E /* Pods_LockScreenUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LockScreenUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5CBAA4A9E305BF547357E8D /* Pods-MediaRemoteControlUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediaRemoteControlUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MediaRemoteControlUITests/Pods-MediaRemoteControlUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D90E156728B8A3AD2D3F00C0 /* Pods-MediaRemoteControlUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediaRemoteControlUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MediaRemoteControlUITests/Pods-MediaRemoteControlUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		EB6D8738E205C1FB21910E63 /* Pods_SampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0E3B4D3C3055A51D8BFEF93 /* Pods-LockScreenTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LockScreenTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LockScreenTests/Pods-LockScreenTests.release.xcconfig"; sourceTree = "<group>"; };
 		F104067277FA9E168BCB7FD4 /* Pods-LockScreenUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LockScreenUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LockScreenUITests/Pods-LockScreenUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,6 +142,7 @@
 			files = (
 				EBD6AF426C38BB1521C6D819 /* Pods_MediaRemoteControl.framework in Frameworks */,
 				303E54221E79D4EC0047DF63 /* MediaRemoteControl.framework in Frameworks */,
+				F4A6648AB6F55DEB5EB9C8CA /* Pods_Sample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +152,7 @@
 			files = (
 				20D6BCD8738451AC22B53B18 /* Pods_MediaRemoteControlTests.framework in Frameworks */,
 				303E54311E79D6D00047DF63 /* MediaRemoteControl.framework in Frameworks */,
+				5FAC42363A5CF1CCA4972EE7 /* Pods_SampleTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5E2662E2A0245982189BAAF /* Pods_MediaRemoteControlUITests.framework in Frameworks */,
+				5F918CF09768816CC6A4A84C /* Pods_SampleUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +285,12 @@
 				223E2E9FE9A7502D78A5D66F /* Pods-MediaRemoteControlTests.release.xcconfig */,
 				D90E156728B8A3AD2D3F00C0 /* Pods-MediaRemoteControlUITests.debug.xcconfig */,
 				D5CBAA4A9E305BF547357E8D /* Pods-MediaRemoteControlUITests.release.xcconfig */,
+				572D8CF2AE67456D3BA47F46 /* Pods-Sample.debug.xcconfig */,
+				B6592A3C04F06003AB8E779B /* Pods-Sample.release.xcconfig */,
+				64952AB4075349FB2F93BDF2 /* Pods-SampleTests.debug.xcconfig */,
+				6268DAC6CD72C146DB71CCB6 /* Pods-SampleTests.release.xcconfig */,
+				8CC40A698661901F4E633F3A /* Pods-SampleUITests.debug.xcconfig */,
+				965DF05520814D14DE956FD2 /* Pods-SampleUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -283,6 +304,9 @@
 				4FA89D22D5D52DF6B4BE3850 /* Pods_MediaRemoteControl.framework */,
 				7E4470435A3D5CCCCAC7E07D /* Pods_MediaRemoteControlTests.framework */,
 				1C2B98AC2A2C1FFF1B72EF48 /* Pods_MediaRemoteControlUITests.framework */,
+				0EBBFFA30DB5E42824DF2F92 /* Pods_Sample.framework */,
+				2B3CBDFC7E601D46C484D912 /* Pods_SampleTests.framework */,
+				EB6D8738E205C1FB21910E63 /* Pods_SampleUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -489,7 +513,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MediaRemoteControlTests/Pods-MediaRemoteControlTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SampleTests/Pods-SampleTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		3072377A5A1448357BDE8274 /* [CP] Check Pods Manifest.lock */ = {
@@ -519,7 +543,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MediaRemoteControlUITests/Pods-MediaRemoteControlUITests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SampleUITests/Pods-SampleUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9F805411E1FA8769DA2BCC2E /* [CP] Check Pods Manifest.lock */ = {
@@ -549,7 +573,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MediaRemoteControl/Pods-MediaRemoteControl-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sample/Pods-Sample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B236EBB88F7BFAE1AD9F97D4 /* [CP] Copy Pods Resources */ = {
@@ -564,7 +588,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MediaRemoteControlUITests/Pods-MediaRemoteControlUITests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SampleUITests/Pods-SampleUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C1524ABE1D07756BCE8E3E31 /* [CP] Check Pods Manifest.lock */ = {
@@ -594,7 +618,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MediaRemoteControl/Pods-MediaRemoteControl-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sample/Pods-Sample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F2C85C19D8F2C8C500AEBA69 /* [CP] Embed Pods Frameworks */ = {
@@ -609,7 +633,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MediaRemoteControlTests/Pods-MediaRemoteControlTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SampleTests/Pods-SampleTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -787,6 +811,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -830,6 +855,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -839,7 +865,7 @@
 		};
 		30810C851E75BCEA00B119CA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 66BFF9809F5BF200AD2EE683 /* Pods-MediaRemoteControl.debug.xcconfig */;
+			baseConfigurationReference = 572D8CF2AE67456D3BA47F46 /* Pods-Sample.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -854,7 +880,7 @@
 		};
 		30810C861E75BCEA00B119CA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9D6D72FC3FEFE848881EB8EE /* Pods-MediaRemoteControl.release.xcconfig */;
+			baseConfigurationReference = B6592A3C04F06003AB8E779B /* Pods-Sample.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -869,7 +895,7 @@
 		};
 		30810C881E75BCEA00B119CA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6E0290B88E662CD4D565F046 /* Pods-MediaRemoteControlTests.debug.xcconfig */;
+			baseConfigurationReference = 64952AB4075349FB2F93BDF2 /* Pods-SampleTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
@@ -884,7 +910,7 @@
 		};
 		30810C891E75BCEA00B119CA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 223E2E9FE9A7502D78A5D66F /* Pods-MediaRemoteControlTests.release.xcconfig */;
+			baseConfigurationReference = 6268DAC6CD72C146DB71CCB6 /* Pods-SampleTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
@@ -899,7 +925,7 @@
 		};
 		30810C8B1E75BCEA00B119CA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D90E156728B8A3AD2D3F00C0 /* Pods-MediaRemoteControlUITests.debug.xcconfig */;
+			baseConfigurationReference = 8CC40A698661901F4E633F3A /* Pods-SampleUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = "MediaRemoteControl UITests/Info.plist";
@@ -914,7 +940,7 @@
 		};
 		30810C8C1E75BCEA00B119CA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D5CBAA4A9E305BF547357E8D /* Pods-MediaRemoteControlUITests.release.xcconfig */;
+			baseConfigurationReference = 965DF05520814D14DE956FD2 /* Pods-SampleUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = "MediaRemoteControl UITests/Info.plist";

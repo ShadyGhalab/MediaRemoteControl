@@ -1,6 +1,0 @@
-framework module Pods_MediaRemoteControl {
-  umbrella header "Pods-MediaRemoteControl-umbrella.h"
-
-  export *
-  module * { export * }
-}

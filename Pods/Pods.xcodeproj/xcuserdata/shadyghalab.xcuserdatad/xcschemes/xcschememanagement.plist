@@ -8,36 +8,26 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>1</integer>
 		</dict>
-		<key>Pods-MediaRemoteControl.xcscheme</key>
+		<key>Pods-Sample.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>2</integer>
 		</dict>
-		<key>Pods-MediaRemoteControlTests.xcscheme</key>
+		<key>Pods-SampleTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>3</integer>
 		</dict>
-		<key>Pods-MediaRemoteControlUITests.xcscheme</key>
+		<key>Pods-SampleUITests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>4</integer>
 		</dict>
 		<key>Quick.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>5</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -47,22 +37,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1563E90FE684012E96455C290F16D39A</key>
+		<key>17E31DBA82DB10F8B1417F6DBF8089DA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4D6BE5C30CA6C7ADC889F1773A5A185C</key>
+		<key>2A700C624BEA6CABAFB9766DC191E2FD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>89586D3ED035B2B417CFD81ACF2BFE33</key>
+		<key>6E50E7070BDE0C2846BF8E243B1E0244</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F7D9812B6984936523BC4DA3C5B69A88</key>
+		<key>70B937C7C8E83072ABDB69658CC76C89</key>
 		<dict>
 			<key>primary</key>
 			<true/>

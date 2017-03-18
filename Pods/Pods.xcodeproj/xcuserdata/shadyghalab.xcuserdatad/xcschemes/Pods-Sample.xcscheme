@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0820"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1563E90FE684012E96455C290F16D39A"
-               BuildableName = "Pods_MediaRemoteControl.framework"
-               BlueprintName = "Pods-MediaRemoteControl"
+               BlueprintIdentifier = "17E31DBA82DB10F8B1417F6DBF8089DA"
+               BuildableName = "Pods_Sample.framework"
+               BlueprintName = "Pods-Sample"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1563E90FE684012E96455C290F16D39A"
-            BuildableName = "Pods_MediaRemoteControl.framework"
-            BlueprintName = "Pods-MediaRemoteControl"
+            BlueprintIdentifier = "17E31DBA82DB10F8B1417F6DBF8089DA"
+            BuildableName = "Pods_Sample.framework"
+            BlueprintName = "Pods-Sample"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
