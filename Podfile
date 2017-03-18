@@ -2,13 +2,13 @@
 # platform :ios, '9.0'
 
 
-target 'Sample' do
+target 'MediaRemoteControl' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
   # Pods for LockScreen
 
-  target 'SampleTests' do
+  target 'MediaRemoteControlTests' do
     inherit! :search_paths
     # Pods for testing
     use_frameworks!
@@ -16,7 +16,7 @@ target 'Sample' do
     pod 'Quick', '~> 1.0.0'
   end
 
-  target 'SampleUITests' do
+  target 'MediaRemoteControlUITests' do
     inherit! :search_paths
     # Pods for testing
   end

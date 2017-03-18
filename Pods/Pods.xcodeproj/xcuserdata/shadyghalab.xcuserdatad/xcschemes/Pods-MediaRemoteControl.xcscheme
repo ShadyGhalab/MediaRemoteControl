@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2A700C624BEA6CABAFB9766DC191E2FD"
-               BuildableName = "Pods_SampleTests.framework"
-               BlueprintName = "Pods-SampleTests"
+               BlueprintIdentifier = "1563E90FE684012E96455C290F16D39A"
+               BuildableName = "Pods_MediaRemoteControl.framework"
+               BlueprintName = "Pods-MediaRemoteControl"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2A700C624BEA6CABAFB9766DC191E2FD"
-            BuildableName = "Pods_SampleTests.framework"
-            BlueprintName = "Pods-SampleTests"
+            BlueprintIdentifier = "1563E90FE684012E96455C290F16D39A"
+            BuildableName = "Pods_MediaRemoteControl.framework"
+            BlueprintName = "Pods-MediaRemoteControl"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

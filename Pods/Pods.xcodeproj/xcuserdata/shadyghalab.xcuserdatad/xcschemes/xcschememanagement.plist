@@ -9,17 +9,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-Sample.xcscheme</key>
+		<key>Pods-MediaRemoteControl.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-SampleTests.xcscheme</key>
+		<key>Pods-MediaRemoteControlTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-SampleUITests.xcscheme</key>
+		<key>Pods-MediaRemoteControlUITests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -37,22 +37,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>17E31DBA82DB10F8B1417F6DBF8089DA</key>
+		<key>1563E90FE684012E96455C290F16D39A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2A700C624BEA6CABAFB9766DC191E2FD</key>
+		<key>4D6BE5C30CA6C7ADC889F1773A5A185C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6E50E7070BDE0C2846BF8E243B1E0244</key>
+		<key>89586D3ED035B2B417CFD81ACF2BFE33</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>70B937C7C8E83072ABDB69658CC76C89</key>
+		<key>F7D9812B6984936523BC4DA3C5B69A88</key>
 		<dict>
 			<key>primary</key>
 			<true/>
