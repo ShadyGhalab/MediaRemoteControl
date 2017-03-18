@@ -29,6 +29,15 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "30810C5B1E75BCE900B119CA"
+            BuildableName = "Sample.app"
+            BlueprintName = "Sample"
+            ReferencedContainer = "container:SampleTests.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -42,15 +51,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "303E540C1E79D4EB0047DF63"
-            BuildableName = "MediaRemoteControl.framework"
-            BlueprintName = "MediaRemoteControl"
-            ReferencedContainer = "container:MediaRemoteControl.xcodeproj">
+            BlueprintIdentifier = "30810C5B1E75BCE900B119CA"
+            BuildableName = "Sample.app"
+            BlueprintName = "Sample"
+            ReferencedContainer = "container:SampleTests.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>

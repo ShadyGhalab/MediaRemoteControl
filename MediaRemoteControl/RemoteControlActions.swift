@@ -10,30 +10,30 @@ import Foundation
 
 protocol RemoteControlActions {
     
-    /// This will be called when the user press the play button.
-    var didTapPlay: (() -> ())? { get set }
+    /// call when the user press on the play button.
+    var didTapPlay: (() -> ())? { get }
     
-    /// This will be called when the user press the pause button.
-    var didTapPause: (() -> ())? { get set }
+    /// call when the user press the pause button.
+    var didTapPause: (() -> ())? { get }
    
-    /// This will be called when the user press the next button.
-    var didTapNext: (() -> ())? { get set }
+    /// call when the user press the next button.
+    var didTapNext: (() -> ())? { get }
     
-    /// This will be called when the user press the previous button.
-    var didTapPrevious: (() -> ())? { get set }
+    /// call when the user press the previous button.
+    var didTapPrevious: (() -> ())? { get }
     
-    /// This will be called when the user press the seek forward button.
-    var didSeekForward: (() -> ())? { get set }
+    /// call when the user press the seek forward button.
+    var didSeekForward: (() -> ())? { get }
     
-    /// This will be called when the user press the seek backward button.
-    var didSeekBackward: (() -> ())? { get set }
+    /// call when the user press the seek backward button.
+    var didSeekBackward: (() -> ())? { get }
     
-    /// This will be called when the user press the skip forward button.
-    var didSkipForward: ((TimeInterval) -> ())? { get set }
+    /// call when the user press the skip forward button.
+    var didSkipForward: ((TimeInterval) -> ())? { get }
     
-    /// This will be called when the user press the skip backward button.
-    var didSkipBackward: ((TimeInterval) -> ())? { get set }
+    /// call when the user press the skip backward button.
+    var didSkipBackward: ((TimeInterval) -> ())? { get }
 
-    /// This will be called when the user changed the slider value.
-    var didPlaybackPositionChanged:((TimeInterval) -> ())? { get set }
+    /// call when the user changed the slider value.
+    var didPlaybackPositionChanged:((TimeInterval) -> ())? { get }
 }

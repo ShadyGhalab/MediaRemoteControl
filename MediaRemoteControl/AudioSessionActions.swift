@@ -11,18 +11,18 @@ import MediaPlayer
 
 protocol AudioSessionActions {
     
-    /// This will be called when a route change has occurred.
-    var didAudioSessionRouteChanged: ((AVAudioSessionRouteDescription) -> ())? { get set }
+    /// call when a route change has occurred.
+    var didAudioSessionRouteChanged: ((AVAudioSessionRouteDescription) -> ())? { get }
     
     /// Use control center to test, e.g. start and stop a Music song When your app in the foreground.
-    /// This will be called when the system is indicating that another application's primary audio has started.
-    var didAnotherAppPrimaryAudioStart: (() -> ())? { get set }
+    /// call when the system is indicating that another application's primary audio has started.
+    var didAnotherAppPrimaryAudioStart: (() -> ())? { get }
     
     /// Use control center to test, e.g. start and stop a Music song When your app in the foreground.
-    /// This will be called when the system is indicating that another application's primary audio has stopped.
-    var didAnotherAppPrimaryAudioStop: (() -> ())? { get set }
+    /// call when the system is indicating that another application's primary audio has stopped.
+    var didAnotherAppPrimaryAudioStop: (() -> ())? { get }
 
-    /// This will be called when the route changes from some kind of Headphones to Built-In Speaker,
+    /// call when the route changes from some kind of Headphones to Built-In Speaker,
     /// we should pause our sound (doesn't happen automatically)
-    var didSessionInterruptionRoute: ((Bool) -> ())? { get set }
+    var didSessionInterruptionRoute: ((Bool) -> ())? { get }
 }

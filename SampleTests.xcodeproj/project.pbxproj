@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		20D6BCD8738451AC22B53B18 /* Pods_MediaRemoteControlTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E4470435A3D5CCCCAC7E07D /* Pods_MediaRemoteControlTests.framework */; };
-		303E54161E79D4EC0047DF63 /* MediaRemoteControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 303E540D1E79D4EB0047DF63 /* MediaRemoteControl.framework */; };
-		303E541D1E79D4EC0047DF63 /* MediaRemoteControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303E541C1E79D4EC0047DF63 /* MediaRemoteControlTests.swift */; };
 		303E541F1E79D4EC0047DF63 /* MediaRemoteControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 303E540F1E79D4EB0047DF63 /* MediaRemoteControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		303E54221E79D4EC0047DF63 /* MediaRemoteControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 303E540D1E79D4EB0047DF63 /* MediaRemoteControl.framework */; };
 		303E54231E79D4EC0047DF63 /* MediaRemoteControl.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 303E540D1E79D4EB0047DF63 /* MediaRemoteControl.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -38,20 +36,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		303E54171E79D4EC0047DF63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 30810C541E75BCE900B119CA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 303E540C1E79D4EB0047DF63;
-			remoteInfo = MediaRemoteControl;
-		};
-		303E54191E79D4EC0047DF63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 30810C541E75BCE900B119CA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 30810C5B1E75BCE900B119CA;
-			remoteInfo = Sample;
-		};
 		303E54201E79D4EC0047DF63 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 30810C541E75BCE900B119CA /* Project object */;
@@ -98,9 +82,6 @@
 		303E540D1E79D4EB0047DF63 /* MediaRemoteControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MediaRemoteControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		303E540F1E79D4EB0047DF63 /* MediaRemoteControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MediaRemoteControl.h; sourceTree = "<group>"; };
 		303E54101E79D4EB0047DF63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		303E54151E79D4EB0047DF63 /* MediaRemoteControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MediaRemoteControlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		303E541C1E79D4EC0047DF63 /* MediaRemoteControlTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaRemoteControlTests.swift; sourceTree = "<group>"; };
-		303E541E1E79D4EC0047DF63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		304B702E1E799AAE001BE716 /* RemoteControlManagerSpecs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteControlManagerSpecs.swift; sourceTree = "<group>"; };
 		30810C5C1E75BCE900B119CA /* Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30810C5F1E75BCE900B119CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -143,14 +124,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		303E54121E79D4EB0047DF63 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				303E54161E79D4EC0047DF63 /* MediaRemoteControl.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		30810C591E75BCE900B119CA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -189,15 +162,6 @@
 			path = MediaRemoteControl;
 			sourceTree = "<group>";
 		};
-		303E541B1E79D4EC0047DF63 /* MediaRemoteControlTests */ = {
-			isa = PBXGroup;
-			children = (
-				303E541C1E79D4EC0047DF63 /* MediaRemoteControlTests.swift */,
-				303E541E1E79D4EC0047DF63 /* Info.plist */,
-			);
-			path = MediaRemoteControlTests;
-			sourceTree = "<group>";
-		};
 		30810C531E75BCE900B119CA = {
 			isa = PBXGroup;
 			children = (
@@ -205,7 +169,6 @@
 				30810C731E75BCE900B119CA /* MediaRemoteControl Tests */,
 				30810C7E1E75BCE900B119CA /* MediaRemoteControl UITests */,
 				303E540E1E79D4EB0047DF63 /* MediaRemoteControl */,
-				303E541B1E79D4EC0047DF63 /* MediaRemoteControlTests */,
 				30810C5D1E75BCE900B119CA /* Products */,
 				4268DDB12E6CBDD8BA36827C /* Pods */,
 				927D32DDC2BA27DA542DAE01 /* Frameworks */,
@@ -219,7 +182,6 @@
 				30810C701E75BCE900B119CA /* SampleTests.xctest */,
 				30810C7B1E75BCE900B119CA /* SampleUITests.xctest */,
 				303E540D1E79D4EB0047DF63 /* MediaRemoteControl.framework */,
-				303E54151E79D4EB0047DF63 /* MediaRemoteControlTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -357,25 +319,6 @@
 			productReference = 303E540D1E79D4EB0047DF63 /* MediaRemoteControl.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		303E54141E79D4EB0047DF63 /* MediaRemoteControlTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 303E54281E79D4EC0047DF63 /* Build configuration list for PBXNativeTarget "MediaRemoteControlTests" */;
-			buildPhases = (
-				303E54111E79D4EB0047DF63 /* Sources */,
-				303E54121E79D4EB0047DF63 /* Frameworks */,
-				303E54131E79D4EB0047DF63 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				303E54181E79D4EC0047DF63 /* PBXTargetDependency */,
-				303E541A1E79D4EC0047DF63 /* PBXTargetDependency */,
-			);
-			name = MediaRemoteControlTests;
-			productName = MediaRemoteControlTests;
-			productReference = 303E54151E79D4EB0047DF63 /* MediaRemoteControlTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		30810C5B1E75BCE900B119CA /* Sample */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 30810C841E75BCEA00B119CA /* Build configuration list for PBXNativeTarget "Sample" */;
@@ -455,11 +398,6 @@
 						DevelopmentTeam = EZKTHB6PL9;
 						ProvisioningStyle = Automatic;
 					};
-					303E54141E79D4EB0047DF63 = {
-						CreatedOnToolsVersion = 8.2;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 30810C5B1E75BCE900B119CA;
-					};
 					30810C5B1E75BCE900B119CA = {
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = EZKTHB6PL9;
@@ -482,7 +420,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 30810C571E75BCE900B119CA /* Build configuration list for PBXProject "MediaRemoteControl" */;
+			buildConfigurationList = 30810C571E75BCE900B119CA /* Build configuration list for PBXProject "SampleTests" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -499,20 +437,12 @@
 				30810C6F1E75BCE900B119CA /* SampleTests */,
 				30810C7A1E75BCE900B119CA /* SampleUITests */,
 				303E540C1E79D4EB0047DF63 /* MediaRemoteControl */,
-				303E54141E79D4EB0047DF63 /* MediaRemoteControlTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		303E540B1E79D4EB0047DF63 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		303E54131E79D4EB0047DF63 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -698,14 +628,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		303E54111E79D4EB0047DF63 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				303E541D1E79D4EC0047DF63 /* MediaRemoteControlTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		30810C581E75BCE900B119CA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -739,16 +661,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		303E54181E79D4EC0047DF63 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 303E540C1E79D4EB0047DF63 /* MediaRemoteControl */;
-			targetProxy = 303E54171E79D4EC0047DF63 /* PBXContainerItemProxy */;
-		};
-		303E541A1E79D4EC0047DF63 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 30810C5B1E75BCE900B119CA /* Sample */;
-			targetProxy = 303E54191E79D4EC0047DF63 /* PBXContainerItemProxy */;
-		};
 		303E54211E79D4EC0047DF63 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 303E540C1E79D4EB0047DF63 /* MediaRemoteControl */;
@@ -829,34 +741,6 @@
 				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		303E54291E79D4EC0047DF63 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				INFOPLIST_FILE = MediaRemoteControlTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Viacom.MediaRemoteControlTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sample.app/Sample";
-			};
-			name = Debug;
-		};
-		303E542A1E79D4EC0047DF63 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				INFOPLIST_FILE = MediaRemoteControlTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Viacom.MediaRemoteControlTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sample.app/Sample";
 			};
 			name = Release;
 		};
@@ -1055,16 +939,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		303E54281E79D4EC0047DF63 /* Build configuration list for PBXNativeTarget "MediaRemoteControlTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				303E54291E79D4EC0047DF63 /* Debug */,
-				303E542A1E79D4EC0047DF63 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		30810C571E75BCE900B119CA /* Build configuration list for PBXProject "MediaRemoteControl" */ = {
+		30810C571E75BCE900B119CA /* Build configuration list for PBXProject "SampleTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				30810C821E75BCEA00B119CA /* Debug */,
