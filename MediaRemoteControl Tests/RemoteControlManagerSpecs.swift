@@ -25,8 +25,9 @@ class RemoteControlManagerSpecs: QuickSpec {
                                        mediaDescription: "Six elementary school teachers",
                                        mediaNumber: 5,
                                        mediaDuration: CMTimeMake(30, 1),
-                                       mediaArtwork: UIImage(named: ""),
-                                       mediaArtworkSize: CGSize(width: 300, height: 300))
+                                       mediaArtwork: UIImage(named: "Default"),
+                                       mediaArtworkSize: CGSize(width: 300, height: 300),
+                                       brandName: "TV Land", skipInterval: 10)
             
             self.remoteControlManager = RemoteControlManager(with: self.mediaItem)
         }
@@ -113,6 +114,37 @@ class RemoteControlManagerSpecs: QuickSpec {
         }
         
         describe("setupRemoteCommandCenter") {
+            context("when the user tap skip command") {
+                it("shoud the time interval for the command be like the time interval for the media item") {
+                    let commandCenter = MPRemoteCommandCenter.shared()
+                    
+                    expect(commandCenter.skipForwardCommand.preferredIntervals).to(contain((self.mediaItem?.skipForwardInterval)!), description: nil)
+                    expect(commandCenter.skipBackwardCommand.preferredIntervals).to(contain((self.mediaItem?.skipBackwardInterval)!), description: nil)
+                }
+            }
+            
+            context("when the user tap skip command") {
+                it("shoud the time interval for the command be like the time interval for the media item") {
+                    let commandCenter = MPRemoteCommandCenter.shared()
+                    self.mediaItem = MediaItem(mediaTitle: "Friends",
+                                               mediaDescription: "Six elementary school teachers",
+                                               mediaNumber: 5,
+                                               mediaDuration: CMTimeMake(50, 1),
+                                               mediaArtwork: nil,
+                                               mediaArtworkSize: CGSize(width: 300, height: 300),
+                                               brandName: "TV Land", skipInterval: 30)
+                    
+                    self.remoteControlManager = RemoteControlManager(with: self.mediaItem)
+
+                    expect(commandCenter.skipForwardCommand.preferredIntervals).to(contain((self.mediaItem?.skipForwardInterval)!), description: nil)
+                    expect(commandCenter.skipBackwardCommand.preferredIntervals).to(contain((self.mediaItem?.skipBackwardInterval)!), description: nil)
+                }
+            }
+        }
+        
+        describe("updateNowPlayingInfo") {
+        
+        
         
         
         }

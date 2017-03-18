@@ -17,16 +17,25 @@ struct MediaItem {
     let mediaArtwork: UIImage?
     let mediaArtworkSize: CGSize
     let mediaDuration: CMTime
-    var skipForwardIntervals: NSNumber = 10
-    var skipBackwardIntervals: NSNumber = 10
+    var skipForwardInterval: NSNumber?
+    var skipBackwardInterval: NSNumber?
     var brandName: String?
     
-    init(mediaTitle: String, mediaDescription: String, mediaNumber: Int?, mediaDuration: CMTime, mediaArtwork: UIImage? = UIImage(named:"Defaults"), mediaArtworkSize: CGSize) {
+    init(mediaTitle: String, mediaDescription: String,
+         mediaNumber: Int?, mediaDuration: CMTime,
+         mediaArtwork: UIImage? = UIImage(named:"Defaults"),
+         mediaArtworkSize: CGSize, brandName: String?,
+         skipInterval: NSNumber
+         ) {
+        
         self.mediaTitle = mediaTitle
         self.mediaDescription = mediaDescription
         self.mediaNumber = mediaNumber
         self.mediaArtwork = mediaArtwork
         self.mediaArtworkSize = mediaArtworkSize
         self.mediaDuration = mediaDuration
+        self.skipForwardInterval = skipInterval
+        self.skipBackwardInterval = skipInterval
+        self.brandName = brandName
     }
 }
