@@ -35,7 +35,7 @@
             BlueprintIdentifier = "30810C5B1E75BCE900B119CA"
             BuildableName = "Sample.app"
             BlueprintName = "Sample"
-            ReferencedContainer = "container:SampleTests.xcodeproj">
+            ReferencedContainer = "container:Sample.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -58,7 +58,7 @@
             BlueprintIdentifier = "30810C5B1E75BCE900B119CA"
             BuildableName = "Sample.app"
             BlueprintName = "Sample"
-            ReferencedContainer = "container:SampleTests.xcodeproj">
+            ReferencedContainer = "container:Sample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
