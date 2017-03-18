@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import AVFoundation
 
-struct MediaItem {
+public struct MediaItem {
     let mediaTitle: String
     let mediaDescription: String
     let mediaNumber: Int?

@@ -35,7 +35,7 @@ public class RemoteControlManager: NSObject, RemoteControlActions, AudioSessionA
     var didAnotherAppPrimaryAudioStop: (() -> ())?
     var didSessionInterruptionRouteEnd: (() -> ())?
     
-    init(with mediaItem: MediaItem) {
+    public init(with mediaItem: MediaItem) {
         super.init()
         
         defer {
