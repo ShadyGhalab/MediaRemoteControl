@@ -21,7 +21,7 @@ public struct MediaItem {
     var skipBackwardInterval: NSNumber?
     var brandName: String?
     
-    init(mediaTitle: String, mediaDescription: String,
+   public init(mediaTitle: String, mediaDescription: String,
          mediaNumber: Int?, mediaDuration: CMTime,
          mediaArtwork: UIImage? = UIImage(named:"Defaults"),
          mediaArtworkSize: CGSize, brandName: String?,
