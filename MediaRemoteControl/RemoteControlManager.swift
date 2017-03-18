@@ -9,7 +9,7 @@
 import Foundation
 import MediaPlayer
 
-class RemoteControlManager: NSObject, RemoteControlActions, AudioSessionActions {
+public class RemoteControlManager: NSObject, RemoteControlActions, AudioSessionActions {
 
     fileprivate var mediaItem: MediaItem? {
         didSet {
