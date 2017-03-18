@@ -20,20 +20,20 @@ public class RemoteControlManager: NSObject, RemoteControlActions, AudioSessionA
         }
     }
     
-    var didTapPlay: (() -> ())?
-    var didTapPause: (() -> ())?
-    var didTapNext: (() -> ())?
-    var didTapPrevious: (() -> ())?
-    var didTapSeekForward: (() -> ())?
-    var didTapSeekBackward: (() -> ())?
-    var didTapSkipForward: ((TimeInterval) -> ())?
-    var didTapSkipBackward: ((TimeInterval) -> ())?
-    var didPlaybackPositionChange: ((TimeInterval) -> ())?
+    public var didTapPlay: (() -> ())?
+    public var didTapPause: (() -> ())?
+    public var didTapNext: (() -> ())?
+    public var didTapPrevious: (() -> ())?
+    public var didTapSeekForward: (() -> ())?
+    public var didTapSeekBackward: (() -> ())?
+    public var didTapSkipForward: ((TimeInterval) -> ())?
+    public var didTapSkipBackward: ((TimeInterval) -> ())?
+    public var didPlaybackPositionChange: ((TimeInterval) -> ())?
     
-    var didAudioSessionRouteChange: ((AVAudioSessionRouteDescription) -> ())?
-    var didAnotherAppPrimaryAudioStart: (() -> ())?
-    var didAnotherAppPrimaryAudioStop: (() -> ())?
-    var didSessionInterruptionRouteEnd: (() -> ())?
+    public var didAudioSessionRouteChange: ((AVAudioSessionRouteDescription) -> ())?
+    public var didAnotherAppPrimaryAudioStart: (() -> ())?
+    public var didAnotherAppPrimaryAudioStop: (() -> ())?
+    public var didSessionInterruptionRouteEnd: (() -> ())?
     
     public init(with mediaItem: MediaItem) {
         super.init()
