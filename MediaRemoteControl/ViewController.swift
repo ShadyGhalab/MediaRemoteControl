@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  LockScreen
+//  MediaRemoteControll
 //
 //  Created by Shady Ghalab on 12/03/2017.
 //  Copyright © 2017 Shady Ghalab. All rights reserved.

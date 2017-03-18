@@ -1,6 +1,6 @@
 //
-//  ExternalPlayerActions.swift
-//  LockScreen
+//  RemoteControlActions.swift
+//  MediaRemoteControll
 //
 //  Created by Shady Ghalab on 13/03/2017.
 //  Copyright © 2017 Shady Ghalab. All rights reserved.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol RemoteControlActions {
+protocol RemoteControlActions: class {
     
     /// call when the user press on the play button.
     var didTapPlay: (() -> ())? { get }
