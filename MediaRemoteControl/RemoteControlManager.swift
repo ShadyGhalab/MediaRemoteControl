@@ -11,7 +11,7 @@ import MediaPlayer
 
 class RemoteControlManager: NSObject, RemoteControlActions, AudioSessionActions {
 
-    fileprivate var mediaItem: MediaItem {
+    fileprivate var mediaItem: MediaItem? {
         didSet {
             setupAudioSession()
             setupRemoteCommandCenter()
@@ -87,8 +87,8 @@ class RemoteControlManager: NSObject, RemoteControlActions, AudioSessionActions 
         
         let commandCenter = MPRemoteCommandCenter.shared()
       
-        commandCenter.skipForwardCommand.preferredIntervals = [mediaItem.skipForwardInterval ?? 10]
-        commandCenter.skipBackwardCommand.preferredIntervals = [mediaItem.skipBackwardInterval ?? 10]
+        commandCenter.skipForwardCommand.preferredIntervals = [mediaItem?.skipForwardInterval ?? 10]
+        commandCenter.skipBackwardCommand.preferredIntervals = [mediaItem?.skipBackwardInterval ?? 10]
         
         commandCenter.playCommand.addTarget { [weak self] event in
             self?.didTapPlay?()
@@ -147,6 +147,7 @@ class RemoteControlManager: NSObject, RemoteControlActions, AudioSessionActions 
     }
     
     fileprivate func updateNowPlayingInfo() {
+        guard let mediaItem = mediaItem else { return }
        
         var nowPlayingInfo: [String : Any] = [:]
         var mediaArt: MPMediaItemArtwork?
@@ -154,7 +155,7 @@ class RemoteControlManager: NSObject, RemoteControlActions, AudioSessionActions 
         let infoCenter = MPNowPlayingInfoCenter.default()
         if #available(iOS 10.0, *) {
             mediaArt = MPMediaItemArtwork(boundsSize: mediaItem.mediaArtworkSize, requestHandler: { (size) -> UIImage in
-                return self.mediaItem.mediaArtwork ?? UIImage(named:"Default")!
+                return mediaItem.mediaArtwork ?? UIImage(named:"Default")!
             })
         } else {
             mediaArt = MPMediaItemArtwork(image: mediaItem.mediaArtwork ?? UIImage(named:"Default")!)
