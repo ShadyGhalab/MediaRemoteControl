@@ -28,24 +28,24 @@ import AVFoundation
 public struct MediaItem {
     let title: String
     let description: String
-    let number: Int?
+    let numbers: (season: Int, episode: Int)
     let artwork: UIImage?
     let artworkSize: CGSize
     let duration: CMTime
     var skipInterval: NSNumber?
     var skipBackwardInterval: NSNumber?
-    var brandName: String?
+    var brandName: String
     
     public init(withTitle title: String, withDescription description: String,
-         withMediaNumber number: Int?, withDuration duration: CMTime,
+         withSeasonEpisodeNumbers numbers: (season: Int, episode: Int), withDuration duration: CMTime,
          artwork: UIImage?,
-         artworkSize: CGSize, withBrand brandName: String?,
+         artworkSize: CGSize, withBrand brandName: String,
          skipInterval: NSNumber
          ) {
         
         self.title = title
         self.description = description
-        self.number = number
+        self.numbers = numbers
         self.artwork = artwork
         self.artworkSize = artworkSize
         self.duration = duration

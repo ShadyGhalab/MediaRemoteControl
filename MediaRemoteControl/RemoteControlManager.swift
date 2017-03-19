@@ -22,10 +22,11 @@
  */
 
 /*
- ## Setup
+ ## How to use:
+ 
  1- Enable the background modes for "audio, airplay and picture in picture"
  2- Create your MediaItem.
- 3- init the RemoteControlManager with your mediaItem.
+ 3- Initialize the RemoteControlManager with your mediaItem.
  4- Enjoy it 😎.
  */
 
@@ -144,11 +145,11 @@ public class RemoteControlManager: NSObject, RemoteControlActions, RemoteControl
                 
         setMediaArtworkIfNeeded(nowPlayingInfo: &nowPlayingInfo)
         
-        nowPlayingInfo[MPMediaItemPropertyTitle] = mediaItem.title
+        nowPlayingInfo[MPMediaItemPropertyTitle] =  mediaItem.title
         nowPlayingInfo[MPMediaItemPropertyMediaType] = MPMediaType.tvShow.rawValue
         nowPlayingInfo[MPMediaItemPropertyPlaybackDuration] = CMTimeGetSeconds(mediaItem.duration)
         nowPlayingInfo[MPNowPlayingInfoPropertyPlaybackRate] = 1.0
-        nowPlayingInfo[MPMediaItemPropertyAlbumTitle] = mediaItem.description
+        nowPlayingInfo[MPMediaItemPropertyAlbumTitle] = "\(mediaItem.brandName) - S\(mediaItem.numbers.season) Ep\(mediaItem.numbers.episode)-\(mediaItem.description)"
        
         MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
     }
