@@ -168,17 +168,17 @@ public class RemoteControlManager: NSObject, RemoteControlActions, AudioSessionA
                 
         setMediaArtworkIfNeeded(nowPlayingInfo: &nowPlayingInfo)
         
-        nowPlayingInfo[MPMediaItemPropertyTitle] = mediaItem.mediaTitle
+        nowPlayingInfo[MPMediaItemPropertyTitle] = mediaItem.title
         nowPlayingInfo[MPMediaItemPropertyMediaType] = MPMediaType.tvShow.rawValue
-        nowPlayingInfo[MPMediaItemPropertyPlaybackDuration] = CMTimeGetSeconds(mediaItem.mediaDuration)
+        nowPlayingInfo[MPMediaItemPropertyPlaybackDuration] = CMTimeGetSeconds(mediaItem.duration)
         nowPlayingInfo[MPNowPlayingInfoPropertyPlaybackRate] = 1.0
-        nowPlayingInfo[MPMediaItemPropertyAlbumTitle] = mediaItem.mediaDescription
+        nowPlayingInfo[MPMediaItemPropertyAlbumTitle] = mediaItem.description
        
         MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
     }
     
     func setMediaArtworkIfNeeded(nowPlayingInfo: inout [String : Any]) {
-        guard let imageArt = mediaItem?.mediaArtwork, let size = mediaItem?.mediaArtworkSize else { return }
+        guard let imageArt = mediaItem?.artwork, let size = mediaItem?.artworkSize else { return }
         var mediaArt: MPMediaItemArtwork?
       
         if #available(iOS 10.0, *) {

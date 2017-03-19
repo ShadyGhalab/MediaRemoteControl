@@ -53,11 +53,11 @@ class ViewController: UIViewController {
     
     func setupRemoteControlMediaActions() {
         
-        let mediaItem = MediaItem(mediaTitle: "Teacher", mediaDescription: "Play with his kids!",
-                                  mediaNumber: 5,
-                                  mediaDuration: (player?.currentItem?.asset.duration)!,
-                                  mediaArtwork: nil, mediaArtworkSize: CGSize(width: 200, height: 200),
-                                  brandName: "TV Land", skipInterval: 20)
+        let mediaItem = MediaItem(withTitle: "Teacher", withDescription: "Play with his kids!",
+                                  withMediaNumber: 5,
+                                  withDuration: (player?.currentItem?.asset.duration)!,
+                                  artwork: nil, artworkSize: CGSize(width: 200, height: 200),
+                                  withBrand: "TV Land", skipInterval: 20)
         
         remoteControlManager = RemoteControlManager(with: mediaItem)
 

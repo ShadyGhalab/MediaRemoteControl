@@ -26,29 +26,29 @@ import UIKit
 import AVFoundation
 
 public struct MediaItem {
-    let mediaTitle: String
-    let mediaDescription: String
-    let mediaNumber: Int?
-    let mediaArtwork: UIImage?
-    let mediaArtworkSize: CGSize
-    let mediaDuration: CMTime
+    let title: String
+    let description: String
+    let number: Int?
+    let artwork: UIImage?
+    let artworkSize: CGSize
+    let duration: CMTime
     var skipForwardInterval: NSNumber?
     var skipBackwardInterval: NSNumber?
     var brandName: String?
     
-   public init(mediaTitle: String, mediaDescription: String,
-         mediaNumber: Int?, mediaDuration: CMTime,
-         mediaArtwork: UIImage? = UIImage(named:"Defaults"),
-         mediaArtworkSize: CGSize, brandName: String?,
+    public init(withTitle title: String, withDescription description: String,
+         withMediaNumber number: Int?, withDuration duration: CMTime,
+         artwork: UIImage?,
+         artworkSize: CGSize, withBrand brandName: String?,
          skipInterval: NSNumber
          ) {
         
-        self.mediaTitle = mediaTitle
-        self.mediaDescription = mediaDescription
-        self.mediaNumber = mediaNumber
-        self.mediaArtwork = mediaArtwork
-        self.mediaArtworkSize = mediaArtworkSize
-        self.mediaDuration = mediaDuration
+        self.title = title
+        self.description = description
+        self.number = number
+        self.artwork = artwork
+        self.artworkSize = artworkSize
+        self.duration = duration
         self.skipForwardInterval = skipInterval
         self.skipBackwardInterval = skipInterval
         self.brandName = brandName

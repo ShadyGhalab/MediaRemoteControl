@@ -35,13 +35,13 @@ class RemoteControlManagerSpecs: QuickSpec {
       
         beforeEach {
 
-            self.mediaItem = MediaItem(mediaTitle: "Teacher",
-                                       mediaDescription: "Six elementary school teachers",
-                                       mediaNumber: 5,
-                                       mediaDuration: CMTimeMake(30, 1),
-                                       mediaArtwork: UIImage(named: "Default"),
-                                       mediaArtworkSize: CGSize(width: 300, height: 300),
-                                       brandName: "TV Land", skipInterval: 10)
+            self.mediaItem = MediaItem(withTitle: "Teacher",
+                                       withDescription: "Six elementary school teachers",
+                                       withMediaNumber: 5,
+                                       withDuration: CMTimeMake(30, 1),
+                                       artwork: UIImage(named: "Default"),
+                                       artworkSize: CGSize(width: 300, height: 300),
+                                       withBrand: "TV Land", skipInterval: 10)
             
             self.remoteControlManager = RemoteControlManager(with: self.mediaItem)
         }
@@ -142,13 +142,13 @@ class RemoteControlManagerSpecs: QuickSpec {
             context("when the user tap skip command") {
                 it("shoud the time interval for the command be like the time interval for the media item") {
                     let commandCenter = MPRemoteCommandCenter.shared()
-                    self.mediaItem = MediaItem(mediaTitle: "Friends",
-                                               mediaDescription: "Six elementary school teachers",
-                                               mediaNumber: 5,
-                                               mediaDuration: CMTimeMake(50, 1),
-                                               mediaArtwork: nil,
-                                               mediaArtworkSize: CGSize(width: 300, height: 300),
-                                               brandName: "TV Land", skipInterval: 30)
+                    self.mediaItem = MediaItem(withTitle: "Friends",
+                                               withDescription: "Six elementary school teachers",
+                                               withMediaNumber: 5,
+                                               withDuration: CMTimeMake(50, 1),
+                                               artwork: nil,
+                                               artworkSize: CGSize(width: 300, height: 300),
+                                               withBrand: "TV Land", skipInterval: 30)
                     
                     self.remoteControlManager = RemoteControlManager(with: self.mediaItem)
 
@@ -163,18 +163,18 @@ class RemoteControlManagerSpecs: QuickSpec {
                 it("should nowPlayingInfo has the same values from media Item") {
                     let infoCenter = MPNowPlayingInfoCenter.default()
                     
-                    expect(infoCenter.nowPlayingInfo?[MPMediaItemPropertyTitle] as? String) == self.mediaItem.mediaTitle
+                    expect(infoCenter.nowPlayingInfo?[MPMediaItemPropertyTitle] as? String) == self.mediaItem.title
                     expect(infoCenter.nowPlayingInfo?[MPMediaItemPropertyMediaType] as? UInt) == MPMediaType.tvShow.rawValue
-                    expect(infoCenter.nowPlayingInfo?[MPMediaItemPropertyPlaybackDuration] as? Float64) == CMTimeGetSeconds(self.mediaItem.mediaDuration)
+                    expect(infoCenter.nowPlayingInfo?[MPMediaItemPropertyPlaybackDuration] as? Float64) == CMTimeGetSeconds(self.mediaItem.duration)
                     expect(infoCenter.nowPlayingInfo?[MPNowPlayingInfoPropertyPlaybackRate] as? NSNumber) == 1.0
-                    expect(infoCenter.nowPlayingInfo?[MPMediaItemPropertyAlbumTitle] as? String) == self.mediaItem.mediaDescription
+                    expect(infoCenter.nowPlayingInfo?[MPMediaItemPropertyAlbumTitle] as? String) == self.mediaItem.description
                    
                     if #available(iOS 10.0, *) {
-                        expect((infoCenter.nowPlayingInfo?[MPMediaItemPropertyArtwork] as? MPMediaItemArtwork)?.image(at: self.mediaItem.mediaArtworkSize)) == MPMediaItemArtwork(boundsSize: self.mediaItem.mediaArtworkSize, requestHandler: { (size) -> UIImage in
-                            return self.mediaItem.mediaArtwork!
-                        }).image(at: self.mediaItem.mediaArtworkSize)
+                        expect((infoCenter.nowPlayingInfo?[MPMediaItemPropertyArtwork] as? MPMediaItemArtwork)?.image(at: self.mediaItem.artworkSize)) == MPMediaItemArtwork(boundsSize: self.mediaItem.artworkSize, requestHandler: { (size) -> UIImage in
+                            return self.mediaItem.artwork!
+                        }).image(at: self.mediaItem.artworkSize)
                     } else {
-                        expect((infoCenter.nowPlayingInfo?[MPMediaItemPropertyArtwork] as? MPMediaItemArtwork)?.image(at: self.mediaItem.mediaArtworkSize)) == MPMediaItemArtwork(image: self.mediaItem.mediaArtwork!).image(at: self.mediaItem.mediaArtworkSize)
+                        expect((infoCenter.nowPlayingInfo?[MPMediaItemPropertyArtwork] as? MPMediaItemArtwork)?.image(at: self.mediaItem.artworkSize)) == MPMediaItemArtwork(image: self.mediaItem.artwork!).image(at: self.mediaItem.artworkSize)
                     }
                 }
             }
