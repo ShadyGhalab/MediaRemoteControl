@@ -59,7 +59,7 @@ class ViewController: UIViewController {
                                   withMediaNumber: 5,
                                   withDuration: (player?.currentItem?.asset.duration)!,
                                   artwork: nil, artworkSize: CGSize(width: 200, height: 200),
-                                  withBrand: "TV Land", skipInterval: 20)
+                                  withBrand: "TV Land", skipInterval: 10)
         
         remoteControlManager = RemoteControlManager(with: mediaItem)
 
@@ -73,11 +73,15 @@ class ViewController: UIViewController {
         
         remoteControlManager?.inputs.didTapSkipForward = { [weak self] skipForwardInterval in
             self?.player?.seek(to: CMTimeAdd((self?.player?.currentTime())!, CMTimeMakeWithSeconds(skipForwardInterval, (self?.player?.currentTime().timescale)!)))
+            
+            // The slider's cursor for the remote control need to be updated.
             self?.remoteControlManager?.outputs.updatePlaybackCursor(currentTime: (self?.player?.currentTime())!,withForwardSeekCommand: true)
         }
         
         remoteControlManager?.inputs.didTapSkipBackward = { [weak self] skipBackwardInterval in
             self?.player?.seek(to: CMTimeSubtract((self?.player?.currentTime())!, CMTimeMakeWithSeconds(skipBackwardInterval, (self?.player?.currentTime().timescale)!)))
+           
+            // The slider's cursor for the remote control need to be updated.
             self?.remoteControlManager?.outputs.updatePlaybackCursor(currentTime: (self?.player?.currentTime())!,withForwardSeekCommand: false)
         }
         
