@@ -127,14 +127,14 @@ public class RemoteControlManager: NSObject, RemoteControlActions, AudioSessionA
         
         commandCenter.skipForwardCommand.addTarget { [weak self] event in
             if let seekForwardEvent = event as? MPSkipIntervalCommandEvent {
-                self?.didTapSkipBackward?(seekForwardEvent.interval)
+                self?.didTapSkipForward?(seekForwardEvent.interval)
             }
             return .success
         }
        
         commandCenter.skipBackwardCommand.addTarget { [weak self] event in
             if let seekBackwardEvent = event as? MPSkipIntervalCommandEvent {
-                self?.didTapSkipForward?(seekBackwardEvent.interval)
+                self?.didTapSkipBackward?(seekBackwardEvent.interval)
             }
             return .success
         }

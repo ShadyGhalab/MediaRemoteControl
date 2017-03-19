@@ -57,24 +57,24 @@ class ViewController: UIViewController {
                                   mediaNumber: 5,
                                   mediaDuration: (player?.currentItem?.asset.duration)!,
                                   mediaArtwork: nil, mediaArtworkSize: CGSize(width: 200, height: 200),
-                                  brandName: "TV Land", skipInterval: 5)
+                                  brandName: "TV Land", skipInterval: 20)
         
         remoteControlManager = RemoteControlManager(with: mediaItem)
 
         remoteControlManager?.didTapPlay = { [weak self] in
-            self?.player!.play()
+            self?.player?.play()
         }
         
         remoteControlManager?.didTapPause = { [weak self] in
-            self?.player!.pause()
+            self?.player?.pause()
         }
         
         remoteControlManager?.didTapSkipForward = { [weak self] skipForwardInterval in
-            self?.player!.seek(to: CMTimeSubtract((self?.player!.currentTime())!, CMTimeMakeWithSeconds(skipForwardInterval, (self?.player!.currentTime().timescale)!)))
+            self?.player?.seek(to: CMTimeAdd((self?.player?.currentTime())!, CMTimeMakeWithSeconds(skipForwardInterval, (self?.player?.currentTime().timescale)!)))
         }
         
         remoteControlManager?.didTapSkipBackward = { [weak self] skipBackwardInterval in
-            self?.player!.seek(to: CMTimeSubtract((self?.player!.currentTime())!, CMTimeMakeWithSeconds(skipBackwardInterval, (self?.player!.currentTime().timescale)!)))
+            self?.player?.seek(to: CMTimeSubtract((self?.player?.currentTime())!, CMTimeMakeWithSeconds(skipBackwardInterval, (self?.player?.currentTime().timescale)!)))
         }
         
         remoteControlManager?.didPlaybackPositionChange = { [weak self] positionTime in
