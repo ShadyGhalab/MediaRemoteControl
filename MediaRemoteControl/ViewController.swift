@@ -32,7 +32,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupPlayer()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -40,15 +40,17 @@ class ViewController: UIViewController {
         
         self.becomeFirstResponder()
 
+        setupRemoteControlMediaActions()
+    }
+    
+    func setupPlayer() {
         let videoURL = URL(string: "https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4")
         self.player = AVPlayer(url: videoURL!)
         let playerLayer = AVPlayerLayer(player: player)
         playerLayer.frame = view.bounds
         view.layer.addSublayer(playerLayer)
-       
+        
         player?.play()
-
-        setupRemoteControlMediaActions()
     }
     
     func setupRemoteControlMediaActions() {
@@ -61,25 +63,27 @@ class ViewController: UIViewController {
         
         remoteControlManager = RemoteControlManager(with: mediaItem)
 
-        remoteControlManager?.didTapPlay = { [weak self] in
+        remoteControlManager?.inputs.didTapPlay = { [weak self] in
             self?.player?.play()
         }
         
-        remoteControlManager?.didTapPause = { [weak self] in
+        remoteControlManager?.inputs.didTapPause = { [weak self] in
             self?.player?.pause()
         }
         
-        remoteControlManager?.didTapSkipForward = { [weak self] skipForwardInterval in
+        remoteControlManager?.inputs.didTapSkipForward = { [weak self] skipForwardInterval in
             self?.player?.seek(to: CMTimeAdd((self?.player?.currentTime())!, CMTimeMakeWithSeconds(skipForwardInterval, (self?.player?.currentTime().timescale)!)))
+            self?.remoteControlManager?.outputs.updatePlaybackCursor(currentTime: (self?.player?.currentTime())!,withForwardSeekCommand: true)
         }
         
-        remoteControlManager?.didTapSkipBackward = { [weak self] skipBackwardInterval in
+        remoteControlManager?.inputs.didTapSkipBackward = { [weak self] skipBackwardInterval in
             self?.player?.seek(to: CMTimeSubtract((self?.player?.currentTime())!, CMTimeMakeWithSeconds(skipBackwardInterval, (self?.player?.currentTime().timescale)!)))
+            self?.remoteControlManager?.outputs.updatePlaybackCursor(currentTime: (self?.player?.currentTime())!,withForwardSeekCommand: false)
         }
         
-        remoteControlManager?.didPlaybackPositionChange = { [weak self] positionTime in
+        remoteControlManager?.inputs.didPlaybackPositionChange = { [weak self] positionTime in
             self?.player?.seek(to: CMTimeMakeWithSeconds(positionTime, 1000000))
-        }
+        }        
     }
     
     override var canBecomeFirstResponder: Bool {

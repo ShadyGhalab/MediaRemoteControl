@@ -32,7 +32,7 @@ public struct MediaItem {
     let artwork: UIImage?
     let artworkSize: CGSize
     let duration: CMTime
-    var skipForwardInterval: NSNumber?
+    var skipInterval: NSNumber?
     var skipBackwardInterval: NSNumber?
     var brandName: String?
     
@@ -49,8 +49,7 @@ public struct MediaItem {
         self.artwork = artwork
         self.artworkSize = artworkSize
         self.duration = duration
-        self.skipForwardInterval = skipInterval
-        self.skipBackwardInterval = skipInterval
+        self.skipInterval = skipInterval
         self.brandName = brandName
     }
 }

@@ -134,8 +134,8 @@ class RemoteControlManagerSpecs: QuickSpec {
                 it("shoud the time interval for the command be like the time interval for the media item") {
                     let commandCenter = MPRemoteCommandCenter.shared()
                     
-                    expect(commandCenter.skipForwardCommand.preferredIntervals).to(contain((self.mediaItem?.skipForwardInterval)!), description: nil)
-                    expect(commandCenter.skipBackwardCommand.preferredIntervals).to(contain((self.mediaItem?.skipBackwardInterval)!), description: nil)
+                    expect(commandCenter.skipForwardCommand.preferredIntervals).to(contain((self.mediaItem?.skipInterval)!), description: nil)
+                    expect(commandCenter.skipBackwardCommand.preferredIntervals).to(contain((self.mediaItem?.skipInterval)!), description: nil)
                 }
             }
             
@@ -152,8 +152,8 @@ class RemoteControlManagerSpecs: QuickSpec {
                     
                     self.remoteControlManager = RemoteControlManager(with: self.mediaItem)
 
-                    expect(commandCenter.skipForwardCommand.preferredIntervals).to(contain((self.mediaItem?.skipForwardInterval)!), description: nil)
-                    expect(commandCenter.skipBackwardCommand.preferredIntervals).to(contain((self.mediaItem?.skipBackwardInterval)!), description: nil)
+                    expect(commandCenter.skipForwardCommand.preferredIntervals).to(contain((self.mediaItem?.skipInterval)!), description: nil)
+                    expect(commandCenter.skipBackwardCommand.preferredIntervals).to(contain((self.mediaItem?.skipInterval)!), description: nil)
                 }
             }
         }

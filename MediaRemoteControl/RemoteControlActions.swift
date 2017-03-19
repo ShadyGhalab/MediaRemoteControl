@@ -22,33 +22,44 @@
  */
 
 import Foundation
+import MediaPlayer
 
-protocol RemoteControlActions: class {
+public protocol RemoteControlActionsInputs {
     
     /// call when the user press on the play button.
-    var didTapPlay: (() -> ())? { get }
+    var didTapPlay: (() -> ())? { get set }
     
     /// call when the user press the pause button.
-    var didTapPause: (() -> ())? { get }
+    var didTapPause: (() -> ())? { get set }
    
     /// call when the user press the next button.
-    var didTapNext: (() -> ())? { get }
+    var didTapNext: (() -> ())? { get set }
     
     /// call when the user press the previous button.
-    var didTapPrevious: (() -> ())? { get }
+    var didTapPrevious: (() -> ())? { get set }
     
     /// call when the user press the seek forward button.
-    var didTapSeekForward: (() -> ())? { get }
+    var didTapSeekForward: (() -> ())? { get set }
     
     /// call when the user press the seek backward button.
-    var didTapSeekBackward: (() -> ())? { get }
+    var didTapSeekBackward: (() -> ())? { get set}
     
     /// call when the user press the skip forward button.
-    var didTapSkipForward: ((TimeInterval) -> ())? { get }
+    var didTapSkipForward: ((TimeInterval) -> ())? { get set }
     
     /// call when the user press the skip backward button.
-    var didTapSkipBackward: ((TimeInterval) -> ())? { get }
+    var didTapSkipBackward: ((TimeInterval) -> ())? { get set }
 
     /// call when the user changed the slider value.
-    var didPlaybackPositionChange:((TimeInterval) -> ())? { get }
+    var didPlaybackPositionChange:((TimeInterval) -> ())? { get set }
+}
+
+public protocol RemoteControlActionsOutputs {
+    // call when the slider cursor need to be updated
+    func updatePlaybackCursor(currentTime time: CMTime, withForwardSeekCommand isForward: Bool)
+}
+
+public protocol RemoteControlActions: class {
+     var inputs: RemoteControlActionsInputs { get set }
+     var outputs: RemoteControlActionsOutputs { get }
 }
