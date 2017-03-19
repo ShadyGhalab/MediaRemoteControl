@@ -37,7 +37,7 @@ class RemoteControlManagerSpecs: QuickSpec {
 
             self.mediaItem = MediaItem(withTitle: "Teacher",
                                        withDescription: "Six elementary school teachers",
-                                       withMediaNumber: 5,
+                                       withSeasonEpisodeNumbers: (1, 5),
                                        withDuration: CMTimeMake(30, 1),
                                        artwork: UIImage(named: "Default"),
                                        artworkSize: CGSize(width: 300, height: 300),
@@ -144,7 +144,7 @@ class RemoteControlManagerSpecs: QuickSpec {
                     let commandCenter = MPRemoteCommandCenter.shared()
                     self.mediaItem = MediaItem(withTitle: "Friends",
                                                withDescription: "Six elementary school teachers",
-                                               withMediaNumber: 5,
+                                               withSeasonEpisodeNumbers: (1,5),
                                                withDuration: CMTimeMake(50, 1),
                                                artwork: nil,
                                                artworkSize: CGSize(width: 300, height: 300),
@@ -167,7 +167,7 @@ class RemoteControlManagerSpecs: QuickSpec {
                     expect(infoCenter.nowPlayingInfo?[MPMediaItemPropertyMediaType] as? UInt) == MPMediaType.tvShow.rawValue
                     expect(infoCenter.nowPlayingInfo?[MPMediaItemPropertyPlaybackDuration] as? Float64) == CMTimeGetSeconds(self.mediaItem.duration)
                     expect(infoCenter.nowPlayingInfo?[MPNowPlayingInfoPropertyPlaybackRate] as? NSNumber) == 1.0
-                    expect(infoCenter.nowPlayingInfo?[MPMediaItemPropertyAlbumTitle] as? String) == self.mediaItem.description
+                    expect(infoCenter.nowPlayingInfo?[MPMediaItemPropertyAlbumTitle] as? String) == "\(self.mediaItem.brandName) - S\(self.mediaItem.numbers.season) Ep\(self.mediaItem.numbers.episode)-\(self.mediaItem.description)"
                    
                     if #available(iOS 10.0, *) {
                         expect((infoCenter.nowPlayingInfo?[MPMediaItemPropertyArtwork] as? MPMediaItemArtwork)?.image(at: self.mediaItem.artworkSize)) == MPMediaItemArtwork(boundsSize: self.mediaItem.artworkSize, requestHandler: { (size) -> UIImage in
