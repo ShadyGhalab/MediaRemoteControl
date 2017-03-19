@@ -28,7 +28,7 @@ import AVFoundation
 class ViewController: UIViewController {
     
     var remoteControlManager: RemoteControlManager?
-    let playerViewController = AVPlayerViewController()
+    var player: AVPlayer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,50 +40,45 @@ class ViewController: UIViewController {
         
         self.becomeFirstResponder()
 
-//        let videoURL = URL(string: "https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4")
-//        let player = AVPlayer(url: videoURL!)
-//        playerViewController.player = player
-//        if #available(iOS 10.0, *) {
-//            playerViewController.updatesNowPlayingInfoCenter = false
-//        } else {
-//            // Fallback on earlier versions
-//        }
-//       
-//        setupRemoteControlMediaActions()
-//        
-//        self.present(playerViewController, animated: true) {
-//            self.playerViewController.player!.play()
-//        }
+        let videoURL = URL(string: "https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4")
+        self.player = AVPlayer(url: videoURL!)
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = view.bounds
+        view.layer.addSublayer(playerLayer)
+       
+        player?.play()
+
+        setupRemoteControlMediaActions()
     }
     
     func setupRemoteControlMediaActions() {
         
         let mediaItem = MediaItem(mediaTitle: "Teacher", mediaDescription: "Play with his kids!",
                                   mediaNumber: 5,
-                                  mediaDuration: (self.playerViewController.player?.currentItem?.asset.duration)!,
+                                  mediaDuration: (player?.currentItem?.asset.duration)!,
                                   mediaArtwork: nil, mediaArtworkSize: CGSize(width: 200, height: 200),
                                   brandName: "TV Land", skipInterval: 5)
         
         remoteControlManager = RemoteControlManager(with: mediaItem)
 
         remoteControlManager?.didTapPlay = { [weak self] in
-            self?.playerViewController.player!.play()
+            self?.player!.play()
         }
         
         remoteControlManager?.didTapPause = { [weak self] in
-            self?.playerViewController.player!.pause()
+            self?.player!.pause()
         }
         
         remoteControlManager?.didTapSkipForward = { [weak self] skipForwardInterval in
-            self?.playerViewController.player!.seek(to: CMTimeSubtract((self?.playerViewController.player!.currentTime())!, CMTimeMakeWithSeconds(skipForwardInterval, (self?.playerViewController.player!.currentTime().timescale)!)))
+            self?.player!.seek(to: CMTimeSubtract((self?.player!.currentTime())!, CMTimeMakeWithSeconds(skipForwardInterval, (self?.player!.currentTime().timescale)!)))
         }
         
         remoteControlManager?.didTapSkipBackward = { [weak self] skipBackwardInterval in
-            self?.playerViewController.player!.seek(to: CMTimeSubtract((self?.playerViewController.player!.currentTime())!, CMTimeMakeWithSeconds(skipBackwardInterval, (self?.playerViewController.player!.currentTime().timescale)!)))
+            self?.player!.seek(to: CMTimeSubtract((self?.player!.currentTime())!, CMTimeMakeWithSeconds(skipBackwardInterval, (self?.player!.currentTime().timescale)!)))
         }
         
         remoteControlManager?.didPlaybackPositionChange = { [weak self] positionTime in
-            self?.playerViewController.player?.seek(to: CMTimeMakeWithSeconds(positionTime, 1000000))
+            self?.player?.seek(to: CMTimeMakeWithSeconds(positionTime, 1000000))
         }
     }
     

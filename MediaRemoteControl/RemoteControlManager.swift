@@ -73,7 +73,7 @@ public class RemoteControlManager: NSObject, RemoteControlActions, AudioSessionA
     }
     
     func audioSessionRouteChange() {
-        self.didAudioSessionRouteChange!(AVAudioSession.sharedInstance().currentRoute)
+        self.didAudioSessionRouteChange?(AVAudioSession.sharedInstance().currentRoute)
     }
     
     func audioSessionSilenceSecondaryAudioHint(notification: Notification) {
