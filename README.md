@@ -17,6 +17,7 @@ that is shared with AirPlay without open the app.
 
 > github "ShadyGhalab/MediaRemoteControl" "master"
 
-![]({{site.baseurl}}//IMG_0551.PNG)
-![]({{site.baseurl}}//IMG_0553.PNG)
-![]({{site.baseurl}}//IMG_0552.PNG)
+![alt tag](http://i66.tinypic.com/2dadbhh.png)
+![alt tag](http://i63.tinypic.com/24d1ysi.png)
+
+
