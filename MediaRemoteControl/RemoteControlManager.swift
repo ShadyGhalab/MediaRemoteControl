@@ -161,25 +161,10 @@ public class RemoteControlManager: NSObject, RemoteControlActions {
         
         nowPlayingInfo[MPMediaItemPropertyArtwork] = mediaArt
     }
-    
-    func tearDownAudioSession() {
-        do {
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
-            try AVAudioSession.sharedInstance().setActive(false, with: .notifyOthersOnDeactivation)
-        } catch {
-            print(error)
-        }
-        
-        NotificationCenter.default.removeObserver(self, name: .UIApplicationDidBecomeActive, object: nil)
-        NotificationCenter.default.removeObserver(self, name: .AVAudioSessionRouteChange, object: nil)
-        NotificationCenter.default.removeObserver(self, name: .AVAudioSessionSilenceSecondaryAudioHint, object: nil)
-        NotificationCenter.default.removeObserver(self, name: .AVAudioSessionInterruption, object: nil)
-    }
-    
+ 
     deinit {
         tearDownAudioSession()
     }
-    
 }
 
 extension RemoteControlManager: AudioSessionActions {
@@ -231,5 +216,18 @@ extension RemoteControlManager: AudioSessionActions {
     func applicationDidBecomeActive() {
         try? AVAudioSession.sharedInstance().setActive(true)
     }
-
+    
+    func tearDownAudioSession() {
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
+            try AVAudioSession.sharedInstance().setActive(false, with: .notifyOthersOnDeactivation)
+        } catch {
+            print(error)
+        }
+        
+        NotificationCenter.default.removeObserver(self, name: .UIApplicationDidBecomeActive, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .AVAudioSessionRouteChange, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .AVAudioSessionSilenceSecondaryAudioHint, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .AVAudioSessionInterruption, object: nil)
+    }
 }
