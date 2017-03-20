@@ -24,7 +24,7 @@
 import Foundation
 import MediaPlayer
 
-public protocol RemoteControlActionsInputs {
+public protocol RemoteControlActions {
     
     /// call when the user press on the play button.
     var didTapPlay: (() -> ())? { get set }
@@ -45,21 +45,12 @@ public protocol RemoteControlActionsInputs {
     var didTapSeekBackward: (() -> ())? { get set}
     
     /// call when the user press the skip forward button.
-    var didTapSkipForward: ((TimeInterval) -> ())? { get set }
+    var didTapSkipForward: ((TimeInterval) -> (CMTime))? { get set }
     
     /// call when the user press the skip backward button.
-    var didTapSkipBackward: ((TimeInterval) -> ())? { get set }
+    var didTapSkipBackward: ((TimeInterval) -> (CMTime))? { get set }
 
     /// call when the user changed the slider value.
     var didPlaybackPositionChange:((TimeInterval) -> ())? { get set }
 }
 
-public protocol RemoteControlActionsOutputs {
-    // call when the slider cursor need to be updated
-    func updatePlaybackCursor(currentTime time: CMTime, withForwardSeekCommand isForward: Bool)
-}
-
-public protocol RemoteControlActions: class {
-     var inputs: RemoteControlActionsInputs { get set }
-     var outputs: RemoteControlActionsOutputs { get }
-}

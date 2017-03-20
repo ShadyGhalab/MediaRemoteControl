@@ -33,7 +33,7 @@
 import Foundation
 import MediaPlayer
 
-public class RemoteControlManager: NSObject, RemoteControlActions, RemoteControlActionsOutputs, RemoteControlActionsInputs {
+public class RemoteControlManager: NSObject, RemoteControlActions {
 
     fileprivate var mediaItem: MediaItem? {
         didSet {
@@ -43,24 +43,15 @@ public class RemoteControlManager: NSObject, RemoteControlActions, RemoteControl
             updateNowPlayingInfo()
         }
     }
-    
-    public var inputs: RemoteControlActionsInputs {
-        get { return self }
-        set {}
-    }
-    public var outputs: RemoteControlActionsOutputs {
-        get { return self }
-        set {}
-    }
-    
+        
     public var didTapPlay: (() -> ())?
     public var didTapPause: (() -> ())?
     public var didTapNext: (() -> ())?
     public var didTapPrevious: (() -> ())?
     public var didTapSeekForward: (() -> ())?
     public var didTapSeekBackward: (() -> ())?
-    public var didTapSkipForward: ((TimeInterval) -> ())?
-    public var didTapSkipBackward: ((TimeInterval) -> ())?
+    public var didTapSkipForward: ((TimeInterval) -> (CMTime))?
+    public var didTapSkipBackward: ((TimeInterval) -> (CMTime))?
     public var didPlaybackPositionChange: ((TimeInterval) -> ())?
     
     public var didAudioSessionRouteChange: ((AVAudioSessionRouteDescription) -> ())?
@@ -97,15 +88,17 @@ public class RemoteControlManager: NSObject, RemoteControlActions, RemoteControl
         }
         
         commandCenter.skipForwardCommand.addTarget { [weak self] event in
-            if let seekForwardEvent = event as? MPSkipIntervalCommandEvent {
-                self?.didTapSkipForward?(seekForwardEvent.interval)
+            if let seekForwardEvent = event as? MPSkipIntervalCommandEvent,
+                let currentTime = self?.didTapSkipForward?(seekForwardEvent.interval) {
+                self?.updatePlaybackCursor(currentTime: currentTime, withForwardSeekCommand: true)
             }
             return .success
         }
        
         commandCenter.skipBackwardCommand.addTarget { [weak self] event in
-            if let seekBackwardEvent = event as? MPSkipIntervalCommandEvent {
-                self?.didTapSkipBackward?(seekBackwardEvent.interval)
+            if let seekBackwardEvent = event as? MPSkipIntervalCommandEvent,
+                let currentTime = self?.didTapSkipBackward?(seekBackwardEvent.interval){
+                self?.updatePlaybackCursor(currentTime: currentTime, withForwardSeekCommand: false)
             }
             return .success
         }

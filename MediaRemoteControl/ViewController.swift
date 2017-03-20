@@ -63,29 +63,25 @@ class ViewController: UIViewController {
         
         remoteControlManager = RemoteControlManager(with: mediaItem)
 
-        remoteControlManager?.inputs.didTapPlay = { [weak self] in
+        remoteControlManager?.didTapPlay = { [weak self] in
             self?.player?.play()
         }
         
-        remoteControlManager?.inputs.didTapPause = { [weak self] in
+        remoteControlManager?.didTapPause = { [weak self] in
             self?.player?.pause()
         }
         
-        remoteControlManager?.inputs.didTapSkipForward = { [weak self] skipForwardInterval in
+        remoteControlManager?.didTapSkipForward = { [weak self] skipForwardInterval in
             self?.player?.seek(to: CMTimeAdd((self?.player?.currentTime())!, CMTimeMakeWithSeconds(skipForwardInterval, (self?.player?.currentTime().timescale)!)))
-            
-            // The slider's cursor for the remote control need to be updated.
-            self?.remoteControlManager?.outputs.updatePlaybackCursor(currentTime: (self?.player?.currentTime())!,withForwardSeekCommand: true)
+            return (self?.player?.currentTime())!
         }
         
-        remoteControlManager?.inputs.didTapSkipBackward = { [weak self] skipBackwardInterval in
+        remoteControlManager?.didTapSkipBackward = { [weak self] skipBackwardInterval in
             self?.player?.seek(to: CMTimeSubtract((self?.player?.currentTime())!, CMTimeMakeWithSeconds(skipBackwardInterval, (self?.player?.currentTime().timescale)!)))
-           
-            // The slider's cursor for the remote control need to be updated.
-            self?.remoteControlManager?.outputs.updatePlaybackCursor(currentTime: (self?.player?.currentTime())!,withForwardSeekCommand: false)
+            return (self?.player?.currentTime())!
         }
         
-        remoteControlManager?.inputs.didPlaybackPositionChange = { [weak self] positionTime in
+        remoteControlManager?.didPlaybackPositionChange = { [weak self] positionTime in
             self?.player?.seek(to: CMTimeMakeWithSeconds(positionTime, 1000000))
         }        
     }

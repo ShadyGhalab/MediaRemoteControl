@@ -35,7 +35,7 @@ class RemoteControlManagerSpecs: QuickSpec {
       
         beforeEach {
 
-            self.mediaItem = MediaItem(withTitle: "Teacher",
+            self.mediaItem = MediaRemoteControl.MediaItem(withTitle: "Teacher",
                                        withDescription: "Six elementary school teachers",
                                        withSeasonEpisodeNumbers: (1, 5),
                                        withDuration: CMTimeMake(30, 1),
