@@ -23,11 +23,11 @@
 
 /*
  ## How to use:
- 
- 1- Enable the background modes for "audio, airplay and picture in picture"
- 2- Create your MediaItem.
- 3- Initialize the RemoteControlManager with your mediaItem.
- 4- Enjoy it 😎.
+
+    1- Enable the background modes for "audio, airplay and picture in picture"
+    2- Create your MediaItem.
+    3- Initialize the RemoteControlManager with your mediaItem.
+    4- Enjoy it 😎.
  */
 
 import Foundation
