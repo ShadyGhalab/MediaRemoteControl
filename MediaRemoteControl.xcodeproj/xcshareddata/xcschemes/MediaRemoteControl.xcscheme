@@ -61,11 +61,6 @@
                BlueprintName = "MediaRemoteControlTests"
                ReferencedContainer = "container:MediaRemoteControl.xcodeproj">
             </BuildableReference>
-            <SkippedTests>
-               <Test
-                  Identifier = "LockScreenTests">
-               </Test>
-            </SkippedTests>
          </TestableReference>
       </Testables>
       <MacroExpansion>
