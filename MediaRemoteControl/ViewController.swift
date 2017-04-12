@@ -40,7 +40,10 @@ class ViewController: UIViewController {
         
         self.becomeFirstResponder()
 
-        setupRemoteControlMediaActions()
+        if ProcessInfo.processInfo.environment["IN_TESTS"] == nil {
+            setupRemoteControlMediaActions()
+        }
+        
     }
     
     func setupPlayer() {
