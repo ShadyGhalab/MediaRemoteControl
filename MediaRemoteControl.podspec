@@ -12,7 +12,7 @@ MediaRemoteControl is a framework that can handle the media using the external c
   s.author           = { 'ShadyGhalab' => 'shadyghalab@gmail.com' }
   s.source           = { :git => 'https://github.com/ShadyGhalab/MediaRemoteControl.git', :tag => s.version.to_s }
  
-  s.ios.deployment_target = '9.1'
+  s.ios.deployment_target = '8.0'
   s.source_files = 'MediaRemoteControl/*.{swift,plist}'
  
 end
