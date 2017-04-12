@@ -27,14 +27,21 @@ that is shared with AirPlay without putting the app in the foreground.
 
 ## How to use
 
-```
-   let mediaItem = MediaItem(withTitle: "Teacher", withDescription: "Play with his kids!",
+```   
+         /* 
+         1- Enable the background modes for "audio, airplay and picture in picture"
+         2- Create your MediaItem.
+         3- Initialize the RemoteControlManager with your mediaItem.
+         4- Enjoy it 😎.
+         */
+         
+        let mediaItem = MediaItem(withTitle: "Teacher", withDescription: "Play with his kids!",
                                   withSeasonEpisodeNumbers: (1,5),
                                   withDuration: (player?.currentItem?.asset.duration)!,
                                   artwork: UIImage(named:"Default"), artworkSize: CGSize(width: 200, height: 200),
                                   withBrand: "TV Land", skipInterval: 10)
         
-        remoteControlManager = RemoteControlManager(with: mediaItem)
+        let remoteControlManager = RemoteControlManager(with: mediaItem)
 
         remoteControlManager?.didTapPlay = { [weak self] in
             self?.player?.play()
