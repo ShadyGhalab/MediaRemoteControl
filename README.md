@@ -3,8 +3,8 @@
 [![Swift 3.0.2](https://img.shields.io/badge/Swift-3.0.2-green.svg?style=flat)](https://swift.org/)
 
 
-MediaRemoteControl is a framework that can handle the media using the external controls (play, pause, skipInterval, seekInterval,etc..) 
-from the remote control and control center. Written in Swift 3.0
+MediaRemoteControl is a framework that can handle any media using the external controls (play, pause, skipInterval, seekInterval,etc..) 
+from the remote control and control center.
 
 
 ### When to use:
