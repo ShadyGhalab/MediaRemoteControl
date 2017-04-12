@@ -855,7 +855,6 @@
 			baseConfigurationReference = 6E0290B88E662CD4D565F046 /* Pods-MediaRemoteControlTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				DEVELOPMENT_TEAM = EZKTHB6PL9;
 				INFOPLIST_FILE = "MediaRemoteControl Tests/Info.plist";
@@ -872,7 +871,6 @@
 			baseConfigurationReference = 223E2E9FE9A7502D78A5D66F /* Pods-MediaRemoteControlTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				DEVELOPMENT_TEAM = EZKTHB6PL9;
 				INFOPLIST_FILE = "MediaRemoteControl Tests/Info.plist";
