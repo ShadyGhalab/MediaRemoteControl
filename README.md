@@ -17,9 +17,10 @@ that is shared with AirPlay without putting the app in the foreground.
 
 > github "ShadyGhalab/MediaRemoteControl" "master"
 
+## Cocoapods
 
-
-
+> pod 'MediaRemoteControl', '0.1.1'r"
+    
 ### Screenshots
 
 ![alt tag](http://i66.tinypic.com/2dadbhh.png)
