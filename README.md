@@ -15,12 +15,45 @@ that is shared with AirPlay without putting the app in the foreground.
 ### Installation:
 ## Carthage
 
-> github "ShadyGhalab/MediaRemoteControl" "0.1.1"
+``` github "ShadyGhalab/MediaRemoteControl" "0.1.1" ```
 
 ## Cocoapods
 
-> pod 'MediaRemoteControl', '0.1.1'
-    
+``` pod 'MediaRemoteControl', '0.1.1' ```
+
+## How to use
+
+```
+   let mediaItem = MediaItem(withTitle: "Teacher", withDescription: "Play with his kids!",
+                                  withSeasonEpisodeNumbers: (1,5),
+                                  withDuration: (player?.currentItem?.asset.duration)!,
+                                  artwork: UIImage(named:"Default"), artworkSize: CGSize(width: 200, height: 200),
+                                  withBrand: "TV Land", skipInterval: 10)
+        
+        remoteControlManager = RemoteControlManager(with: mediaItem)
+
+        remoteControlManager?.didTapPlay = { [weak self] in
+            self?.player?.play()
+        }
+        
+        remoteControlManager?.didTapPause = { [weak self] in
+            self?.player?.pause()
+        }
+        
+        remoteControlManager?.didTapSkipForward = { [weak self] skipForwardInterval in
+            self?.player?.seek(to: CMTimeAdd((self?.player?.currentTime())!, CMTimeMakeWithSeconds(skipForwardInterval, (self?.player?.currentTime().timescale)!)))
+            return (self?.player?.currentTime())!
+        }
+        
+        remoteControlManager?.didTapSkipBackward = { [weak self] skipBackwardInterval in
+            self?.player?.seek(to: CMTimeSubtract((self?.player?.currentTime())!, CMTimeMakeWithSeconds(skipBackwardInterval, (self?.player?.currentTime().timescale)!)))
+            return (self?.player?.currentTime())!
+        }
+        
+        remoteControlManager?.didPlaybackPositionChange = { [weak self] positionTime in
+            self?.player?.seek(to: CMTimeMakeWithSeconds(positionTime, 1000000))
+        }   
+```
     
     
 ### Screenshots
