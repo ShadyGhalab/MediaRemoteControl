@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'MediaRemoteControl'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'MediaRemoteControl is a framework that can handle any media using the external controls '
  
   s.description      = <<-DESC
@@ -13,6 +13,6 @@ MediaRemoteControl is a framework that can handle the media using the external c
   s.source           = { :git => 'https://github.com/ShadyGhalab/MediaRemoteControl.git', :tag => s.version.to_s }
  
   s.ios.deployment_target = '8.0'
-  s.source_files = 'MediaRemoteControl/*.{swift,plist}'
+  s.source_files = 'MediaRemoteControl/AudioSessionActions.swift', 'MediaRemoteControl/MediaItem.swift', 'MediaRemoteControl/RemoteControlActions.swift','MediaRemoteControl/RemoteControlManager.swift'
  
 end
