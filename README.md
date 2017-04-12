@@ -21,6 +21,8 @@ that is shared with AirPlay without putting the app in the foreground.
 
 > pod 'MediaRemoteControl', '0.1.1'r"
     
+    
+    
 ### Screenshots
 
 ![alt tag](http://i66.tinypic.com/2dadbhh.png)
