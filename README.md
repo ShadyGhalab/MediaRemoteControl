@@ -32,7 +32,7 @@ that is shared with AirPlay without putting the app in the foreground.
            1- Enable the background modes for "audio, airplay and picture in picture"
            2- Create your MediaItem.
            3- Initialize the RemoteControlManager with your mediaItem.
-          4- Enjoy it 😎.
+           4- Enjoy it 😎.
          */
          
         let mediaItem = MediaItem(withTitle: "Teacher", withDescription: "Play with his kids!",
