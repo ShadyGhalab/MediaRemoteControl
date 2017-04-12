@@ -19,7 +19,7 @@ that is shared with AirPlay without putting the app in the foreground.
 
 ## Cocoapods
 
-> pod 'MediaRemoteControl', '0.1.1'r"
+> pod 'MediaRemoteControl', '0.1.1'
     
     
     
