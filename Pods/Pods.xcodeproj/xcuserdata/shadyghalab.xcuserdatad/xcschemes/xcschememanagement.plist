@@ -4,30 +4,30 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Nimble.xcscheme</key>
+		<key>Nimble.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
-			<false/>
+			<true/>
 		</dict>
-		<key>Pods-MediaRemoteControl.xcscheme</key>
+		<key>Pods-MediaRemoteControl.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
-			<false/>
+			<true/>
 		</dict>
-		<key>Pods-MediaRemoteControlTests.xcscheme</key>
+		<key>Pods-MediaRemoteControlTests.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
-			<false/>
+			<true/>
 		</dict>
-		<key>Pods-MediaRemoteControlUITests.xcscheme</key>
+		<key>Pods-MediaRemoteControlUITests.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
-			<false/>
+			<true/>
 		</dict>
-		<key>Quick.xcscheme</key>
+		<key>Quick.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
-			<false/>
+			<true/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
