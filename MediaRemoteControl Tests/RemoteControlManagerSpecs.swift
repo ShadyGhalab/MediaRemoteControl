@@ -166,7 +166,7 @@ class RemoteControlManagerSpecs: QuickSpec {
                     expect(infoCenter.nowPlayingInfo?[MPMediaItemPropertyTitle] as? String) == self.mediaItem.title
                     expect(infoCenter.nowPlayingInfo?[MPMediaItemPropertyMediaType] as? UInt) == MPMediaType.tvShow.rawValue
                     expect(infoCenter.nowPlayingInfo?[MPMediaItemPropertyPlaybackDuration] as? Float64) == CMTimeGetSeconds(self.mediaItem.duration)
-                    expect(infoCenter.nowPlayingInfo?[MPNowPlayingInfoPropertyPlaybackRate] as? NSNumber) == 122.0
+                    expect(infoCenter.nowPlayingInfo?[MPNowPlayingInfoPropertyPlaybackRate] as? NSNumber) == 1
                     expect(infoCenter.nowPlayingInfo?[MPMediaItemPropertyAlbumTitle] as? String) == "\(self.mediaItem.brandName) - S\(self.mediaItem.numbers.season) Ep\(self.mediaItem.numbers.episode)-\(self.mediaItem.description)"
                    
                     if #available(iOS 10.0, *) {
