@@ -28,6 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "30810C6F1E75BCE900B119CA"
+               BuildableName = "MediaRemoteControlTests.xctest"
+               BlueprintName = "MediaRemoteControlTests"
+               ReferencedContainer = "container:MediaRemoteControl.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "30810C7A1E75BCE900B119CA"
+               BuildableName = "MediaRemoteControlUITests.xctest"
+               BlueprintName = "MediaRemoteControlUITests"
+               ReferencedContainer = "container:MediaRemoteControl.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
