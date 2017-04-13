@@ -1,9 +1,6 @@
 language: swift  #1
-before_install:
-    - brew update
-    - brew install xctool
-script: - xcodebuild clean build -sdk iphonesimulator -workspace MediaRemoteControl.xcworkspace -scheme MediaRemoteControl CODE_SIGNING_REQUIRED=NO
-
+script: 
+- xcodebuild clean build -sdk iphonesimulator -workspace MediaRemoteControl.xcworkspace -scheme MediaRemoteControl CODE_SIGNING_REQUIRED=NO
 osx_image: xcode8.2 #2
 xcode_workspace: MediaRemoteControl.xcworkspace #3
 xcode_scheme: MediaRemoteControl #4
