@@ -14,62 +14,6 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "303E540C1E79D4EB0047DF63"
-               BuildableName = "MediaRemoteControl.framework"
-               BlueprintName = "MediaRemoteControl"
-               ReferencedContainer = "container:MediaRemoteControl.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "30810C5B1E75BCE900B119CA"
-               BuildableName = "Sample.app"
-               BlueprintName = "Sample"
-               ReferencedContainer = "container:MediaRemoteControl.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "30810C7A1E75BCE900B119CA"
-               BuildableName = "MediaRemoteControlUITests.xctest"
-               BlueprintName = "MediaRemoteControlUITests"
-               ReferencedContainer = "container:MediaRemoteControl.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "30810C6F1E75BCE900B119CA"
-               BuildableName = "MediaRemoteControlTests.xctest"
-               BlueprintName = "MediaRemoteControlTests"
-               ReferencedContainer = "container:MediaRemoteControl.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "1321E318D10CFDC9F5B93A7952492CCD"
                BuildableName = "Nimble.framework"
                BlueprintName = "Nimble"
@@ -130,6 +74,62 @@
                BuildableName = "Quick.framework"
                BlueprintName = "Quick"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "303E540C1E79D4EB0047DF63"
+               BuildableName = "MediaRemoteControl.framework"
+               BlueprintName = "MediaRemoteControl"
+               ReferencedContainer = "container:MediaRemoteControl.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "30810C5B1E75BCE900B119CA"
+               BuildableName = "Sample.app"
+               BlueprintName = "Sample"
+               ReferencedContainer = "container:MediaRemoteControl.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "30810C7A1E75BCE900B119CA"
+               BuildableName = "MediaRemoteControlUITests.xctest"
+               BlueprintName = "MediaRemoteControlUITests"
+               ReferencedContainer = "container:MediaRemoteControl.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "30810C6F1E75BCE900B119CA"
+               BuildableName = "MediaRemoteControlTests.xctest"
+               BlueprintName = "MediaRemoteControlTests"
+               ReferencedContainer = "container:MediaRemoteControl.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
