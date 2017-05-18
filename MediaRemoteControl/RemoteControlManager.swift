@@ -35,7 +35,7 @@ import MediaPlayer
 
 public class RemoteControlManager: NSObject, RemoteControlActions {
 
-    fileprivate var mediaItem: MediaItem?
+    var mediaItem: MediaItem?
         
     public var didTapPlay: (() -> ())?
     public var didTapPause: (() -> ())?
