@@ -35,14 +35,7 @@ import MediaPlayer
 
 public class RemoteControlManager: NSObject, RemoteControlActions {
 
-    fileprivate var mediaItem: MediaItem? {
-        didSet {
-            setupAudioSession()
-            setupRemoteCommandCenter()
-            registerForApplicationStatus()
-            updateNowPlayingInfo()
-        }
-    }
+    fileprivate var mediaItem: MediaItem?
         
     public var didTapPlay: (() -> ())?
     public var didTapPause: (() -> ())?
@@ -61,10 +54,13 @@ public class RemoteControlManager: NSObject, RemoteControlActions {
     
     public init(with mediaItem: MediaItem) {
         super.init()
-        
-        defer {
-             self.mediaItem = mediaItem
-        }
+       
+        self.mediaItem = mediaItem
+
+        setupAudioSession()
+        setupRemoteCommandCenter()
+        registerForApplicationStatus()
+        updateNowPlayingInfo()
     }
     
     
