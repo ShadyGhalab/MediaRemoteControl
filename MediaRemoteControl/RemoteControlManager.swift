@@ -197,7 +197,7 @@ extension RemoteControlManager: AudioSessionActions {
         guard let rawValue = notification.userInfo?[AVAudioSessionInterruptionTypeKey] as? UInt else { return }
         let why = AVAudioSessionInterruptionType(rawValue: rawValue)
         if why == .began {
-            print("interruption began:\n\(notification.userInfo)")
+            print("interruption began:\n\(String(describing: notification.userInfo))")
         } else if let userInfo = notification.userInfo, let opt = userInfo[AVAudioSessionInterruptionOptionKey] as? UInt, AVAudioSessionInterruptionOptions(rawValue:opt).contains(.shouldResume) {
             self.didSessionInterruptionRouteEnd?()
         }
