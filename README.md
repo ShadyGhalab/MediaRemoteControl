@@ -19,7 +19,7 @@ that is shared with AirPlay without putting the app in the foreground.
 ### Installation:
 ## Carthage
 
-``` github "ShadyGhalab/MediaRemoteControl" "0.1.1" ```
+``` github "ShadyGhalab/MediaRemoteControl" "1.2" ```
 
 ## Cocoapods
 
